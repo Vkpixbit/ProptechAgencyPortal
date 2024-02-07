@@ -3,13 +3,13 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="LoginTest(failed)">
     <classes>
-      <class name="allproperties.CreateProperty">
+      <class name="developers.CreateProperty">
         <methods>
+          <include name="developer_property_adding_apartment_underconstruction_without_trakheesi_and_rent_fillotherfields" invocation-numbers="0"/>
           <include name="close"/>
           <include name="openAgencyPortal"/>
-          <include name="verifyPropertyAdd_2" invocation-numbers="0"/>
         </methods>
-      </class> <!-- allproperties.CreateProperty -->
+      </class> <!-- developers.CreateProperty -->
     </classes>
   </test> <!-- LoginTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->

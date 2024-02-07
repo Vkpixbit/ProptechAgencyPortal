@@ -40,22 +40,25 @@ public class ProjectCreatePage extends Components {
 	WebElement phaseNameField1;
 
 	@FindBy(xpath = "//input[@id='developer_project_phases.0.noc_document']")
-	WebElement nocUpload1;
+	WebElement nocUpload_1;
+
+	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.0.project_payment_plan_name']")
+	WebElement firstPhasePlanNameField;
 
 	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.0.project_payment_schedules.0.payment_schedule_date']")
-	WebElement dateField1;
+	WebElement dateField_1_1_1;
 
 	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.0.project_payment_plan_name']")
 	WebElement paymentNameField1;
 
 	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.0.project_payment_schedules.0.payment_schedule_particular']")
-	WebElement particularField1;
+	WebElement particularField_1_1_1;
 
 	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.0.project_payment_schedules.0.payment_schedule_period']")
-	WebElement periodField1;
+	WebElement periodField_1_1_1;
 
 	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.0.project_payment_schedules.0.project_payment_amount']")
-	WebElement bookingAmountField1;
+	WebElement bookingAmountField_1_1_1;
 
 	@FindBy(xpath = "//div[.='Payment Plan 1']")
 	WebElement paymentPlanElement;
@@ -64,19 +67,19 @@ public class ProjectCreatePage extends Components {
 	WebElement projectSuccessMessage;
 
 	@FindBy(xpath = "(//button[text()='Add Payment Schedule'])[1]")
-	WebElement addPaymentShedule1;
+	WebElement addPaymentShedule1_1;
 
 	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.0.project_payment_schedules.1.payment_schedule_date']")
-	WebElement dateField2;
+	WebElement dateField_1_1_2;
 
 	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.0.project_payment_schedules.1.payment_schedule_particular']")
-	WebElement particularField2;
+	WebElement particularField_1_1_2;
 
 	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.0.project_payment_schedules.1.payment_schedule_period']")
-	WebElement periodField2;
+	WebElement periodField_1_1_2;
 
 	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.0.project_payment_schedules.1.project_payment_amount']")
-	WebElement bookingAmountField2;
+	WebElement bookingAmountField_1_1_2;
 
 	@FindBy(xpath = "(//button[text()='Add Payment Plan'])[1]")
 	WebElement addPaymentPlan2;
@@ -124,28 +127,31 @@ public class ProjectCreatePage extends Components {
 	WebElement bookingAmountField5;
 
 	@FindBy(xpath = "(//button[text()='Add Phase'])[1]")
-	WebElement addPhase1;
+	WebElement addPhase_2;
 
 	@FindBy(xpath = "//input[@name='developer_project_phases.1.phase_name']")
-	WebElement phaseNameField2;
+	WebElement phaseNameField_2;
 
 	@FindBy(xpath = "//input[@id='developer_project_phases.1.noc_document']")
-	WebElement nocUpload2;
+	WebElement nocUpload_2;
+	
+	@FindBy(xpath = "//input[@id='under-construction.1']")
+	WebElement underConstructionPhase_2;
 
 	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.0.project_payment_plan_name']")
-	WebElement paymentNameField2_1;
+	WebElement paymentNameField_2_1;
 
 	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.0.project_payment_schedules.0.payment_schedule_date']")
-	WebElement dateField2_1;
+	WebElement dateField_2_1_1;
 
 	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.0.project_payment_schedules.0.payment_schedule_particular']")
-	WebElement particularField2_1;
+	WebElement particularField_2_1_1;
 
 	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.0.project_payment_schedules.0.payment_schedule_period']")
-	WebElement periodField2_1;
+	WebElement periodField_2_1_1;
 
 	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.0.project_payment_schedules.0.project_payment_amount']")
-	WebElement bookingAmountField2_1;
+	WebElement bookingAmountField_2_1_1;
 
 	@FindBy(xpath = "(//button[text()='Add Payment Schedule'])[2]")
 	WebElement addPaymentShedule3;
@@ -154,43 +160,43 @@ public class ProjectCreatePage extends Components {
 	WebElement dateField_2_2;
 
 	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.0.project_payment_schedules.1.payment_schedule_particular']")
-	WebElement particularField2_2;
+	WebElement particularField_1_1_2_2;
 
 	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.0.project_payment_schedules.1.payment_schedule_period']")
-	WebElement periodField2_2;
+	WebElement periodField_1_1_2_2;
 
 	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.0.project_payment_schedules.1.project_payment_amount']")
-	WebElement bookingAmountField2_2;
+	WebElement bookingAmountField_1_1_2_2;
 
-	@FindBy(xpath = "//button[text()='Add Payment Plan'])[2]")
+	@FindBy(xpath = "(//button[text()='Add Payment Plan'])[2]")
 	WebElement addPaymentPlan2_1;
 
 	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.1.project_payment_plan_name']")
 	WebElement paymentNameField2_2;
 
 	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.1.project_payment_schedules.0.payment_schedule_date']")
-	WebElement dateField2_3;
+	WebElement dateField_1_1_2_3;
 
 	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.1.project_payment_schedules.0.payment_schedule_particular']")
-	WebElement particularField2_3;
+	WebElement particularField_1_1_2_3;
 
 	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.1.project_payment_schedules.0.payment_schedule_period']")
-	WebElement periodField2_3;
+	WebElement periodField_1_1_2_3;
 
 	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.1.project_payment_schedules.0.project_payment_amount']")
-	WebElement bookingAmountField2_3;
+	WebElement bookingAmountField_1_1_2_3;
 
 	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.1.project_payment_schedules.1.payment_schedule_date']")
-	WebElement dateField2_4;
+	WebElement dateField_1_1_2_4;
 
 	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.1.project_payment_schedules.1.payment_schedule_particular']")
-	WebElement particularField2_4;
+	WebElement particularField_1_1_2_4;
 
 	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.1.project_payment_schedules.1.payment_schedule_period']")
-	WebElement periodField2_4;
+	WebElement periodField_1_1_2_4;
 
 	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.1.project_payment_schedules.1.project_payment_amount']")
-	WebElement bookingAmountField2_4;
+	WebElement bookingAmountField_1_1_2_4;
 
 	public void selectDeveloperAndStatus(String project_developer, String project_status) throws InterruptedException {
 		developerDropdown.click();
@@ -211,12 +217,12 @@ public class ProjectCreatePage extends Components {
 	}
 
 	// Ready Unit status and Yes Post Handover status
-	public ProjectPage readyUnitYesPostHandover_1(String phase_name_1, String noc_document, String unit_status,
+	public void readyUnitYesPostHandover_1(String phase_name_1, String noc_document, String unit_status,
 			String post_handover_status, String payment_name, String date, String particular_value, String period,
 			String booking_amount) throws InterruptedException, AWTException {
 		phaseNameField1.sendKeys(phase_name_1);
 		Thread.sleep(2000);
-		nocUpload1.sendKeys("/Users/vk14/Downloads/" + noc_document);
+		nocUpload_1.sendKeys("/Users/vk14/Downloads/" + noc_document);
 		scrollToElement(paymentPlanElement);
 		Thread.sleep(3000);
 		driver.findElement(By.id("ready-status.0")).click();
@@ -224,22 +230,51 @@ public class ProjectCreatePage extends Components {
 		driver.findElement(By.id("1.0")).click();
 		Thread.sleep(2000);
 		paymentNameField1.sendKeys(payment_name);
-		dateField1.sendKeys(date);
-		particularField1.sendKeys(particular_value);
-		periodField1.sendKeys(period);
-		bookingAmountField1.sendKeys(booking_amount);
+		dateField_1_1_1.sendKeys(date);
+		particularField_1_1_1.sendKeys(particular_value);
+		periodField_1_1_1.sendKeys(period);
+		bookingAmountField_1_1_1.sendKeys(booking_amount);
 		Thread.sleep(2000);
 		clickSave();
 		Thread.sleep(2000);
 		clickDone();
-		return new ProjectPage(driver);
+	}
+
+	/*
+	 * Ready Status Phase 1 Payment Plan 2 Shedules
+	 */
+	public void ReadyUnitYesPostHandover_2(String phase_name_1, String noc_document, String unit_status,
+			String post_handover_status, String payment_name, String date_1_1, String particular_value_1_1,
+			String period_1_1, String booking_amount_1_1, String date_1_2, String particular_value_1_2,
+			String period_1_2, String booking_amount_1_2) throws InterruptedException {
+		phaseNameField1.sendKeys(phase_name_1);
+		Thread.sleep(2000);
+		nocUpload_1.sendKeys("/Users/vk14/Downloads/" + noc_document);
+		scrollToElement(paymentPlanElement);
+		Thread.sleep(3000);
+		driver.findElement(By.id("ready-status.0")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.id("1.0")).click();
+		Thread.sleep(2000);
+		paymentNameField1.sendKeys(payment_name);
+		dateField_1_1_1.sendKeys(date_1_1);
+		particularField_1_1_1.sendKeys(particular_value_1_1);
+		periodField_1_1_1.sendKeys(period_1_1);
+		bookingAmountField_1_1_1.sendKeys(booking_amount_1_1);
+		Thread.sleep(2000);
+		addPaymentShedule1_1.click();
+		dateField_1_1_2.sendKeys(date_1_2);
+		particularField_1_1_2.sendKeys(particular_value_1_2);
+		periodField_1_1_2.sendKeys(period_1_2);
+		bookingAmountField_1_1_2.sendKeys(booking_amount_1_2);
+		Thread.sleep(2000);
 	}
 
 	// Ready Unit status and No Post handover
 	public ProjectPage readyUnitNoPostHandover(String phase_name_1, String noc_document) throws InterruptedException {
 		phaseNameField1.sendKeys(phase_name_1);
 		Thread.sleep(2000);
-		nocUpload1.sendKeys("/Users/vk14/Downloads/" + noc_document);
+		nocUpload_1.sendKeys("/Users/vk14/Downloads/" + noc_document);
 		scrollToElement(paymentPlanElement);
 		Thread.sleep(2000);
 		driver.findElement(By.id("ready-status.0")).click();
@@ -255,16 +290,16 @@ public class ProjectCreatePage extends Components {
 			String particular_value, String period, String booking_amount) throws InterruptedException {
 		phaseNameField1.sendKeys(phase_name_1);
 		Thread.sleep(2000);
-		nocUpload1.sendKeys("/Users/vk14/Downloads/" + noc_document);
+		nocUpload_1.sendKeys("/Users/vk14/Downloads/" + noc_document);
 		scrollToElement(paymentPlanElement);
 		Thread.sleep(2000);
 		driver.findElement(By.id("under-construction.0")).click();
 		Thread.sleep(2000);
 		paymentNameField1.sendKeys(payment_name);
-		dateField1.sendKeys(date);
-		particularField1.sendKeys(particular_value);
-		periodField1.sendKeys(period);
-		bookingAmountField1.sendKeys(booking_amount);
+		dateField_1_1_1.sendKeys(date);
+		particularField_1_1_1.sendKeys(particular_value);
+		periodField_1_1_1.sendKeys(period);
+		bookingAmountField_1_1_1.sendKeys(booking_amount);
 		Thread.sleep(2000);
 		clickSave();
 		Thread.sleep(3000);
@@ -284,7 +319,7 @@ public class ProjectCreatePage extends Components {
 			String particular_value_5, String period_5, String booking_amount_5) throws InterruptedException {
 		phaseNameField1.sendKeys(phase_name_1);
 		Thread.sleep(2000);
-		nocUpload1.sendKeys("/Users/vk14/Downloads/" + noc_document);
+		nocUpload_1.sendKeys("/Users/vk14/Downloads/" + noc_document);
 		scrollToElement(paymentPlanElement);
 		Thread.sleep(3000);
 		driver.findElement(By.id("ready-status.0")).click();
@@ -292,15 +327,15 @@ public class ProjectCreatePage extends Components {
 		driver.findElement(By.id("1.0")).click();
 		Thread.sleep(2000);
 		paymentNameField1.sendKeys(payment_name_1);
-		dateField1.sendKeys(date_1);
-		particularField1.sendKeys(particular_value_1);
-		periodField1.sendKeys(period_1);
-		bookingAmountField1.sendKeys(booking_amount_1);
-		addPaymentShedule1.click();
-		dateField2.sendKeys(date_2);
-		particularField2.sendKeys(particular_value_2);
-		periodField2.sendKeys(particular_value_2);
-		bookingAmountField2.sendKeys(booking_amount_2);
+		dateField_1_1_1.sendKeys(date_1);
+		particularField_1_1_1.sendKeys(particular_value_1);
+		periodField_1_1_1.sendKeys(period_1);
+		bookingAmountField_1_1_1.sendKeys(booking_amount_1);
+		addPaymentShedule1_1.click();
+		dateField_1_1_2.sendKeys(date_2);
+		particularField_1_1_2.sendKeys(particular_value_2);
+		periodField_1_1_2.sendKeys(particular_value_2);
+		bookingAmountField_1_1_2.sendKeys(booking_amount_2);
 		Thread.sleep(2000);
 		addPaymentPlan2.click();
 		paymentNameField2.sendKeys(payment_name_2);
@@ -336,22 +371,22 @@ public class ProjectCreatePage extends Components {
 			String particular_value_5, String period_5, String booking_amount_5) throws InterruptedException {
 		phaseNameField1.sendKeys(phase_name_1);
 		Thread.sleep(2000);
-		nocUpload1.sendKeys("/Users/vk14/Downloads/" + noc_document);
+		nocUpload_1.sendKeys("/Users/vk14/Downloads/" + noc_document);
 		scrollToElement(paymentPlanElement);
 		Thread.sleep(2000);
 		driver.findElement(By.id("under-construction.0")).click();
 		Thread.sleep(2000);
 		paymentNameField1.sendKeys(payment_name_1);
-		dateField1.sendKeys(date_1);
-		particularField1.sendKeys(particular_value_1);
-		periodField1.sendKeys(period_1);
-		bookingAmountField1.sendKeys(booking_amount_1);
-		addPaymentShedule1.click();
-		dateField2.sendKeys(date_2);
-		particularField2.sendKeys(particular_value_2);
-		periodField2.sendKeys(particular_value_2);
-		bookingAmountField2.sendKeys(booking_amount_2);
-		addPaymentShedule1.click();
+		dateField_1_1_1.sendKeys(date_1);
+		particularField_1_1_1.sendKeys(particular_value_1);
+		periodField_1_1_1.sendKeys(period_1);
+		bookingAmountField_1_1_1.sendKeys(booking_amount_1);
+		addPaymentShedule1_1.click();
+		dateField_1_1_2.sendKeys(date_2);
+		particularField_1_1_2.sendKeys(particular_value_2);
+		periodField_1_1_2.sendKeys(particular_value_2);
+		bookingAmountField_1_1_2.sendKeys(booking_amount_2);
+		addPaymentShedule1_1.click();
 		dateField3.sendKeys(date_3);
 		particularField3.sendKeys(particular_value_3);
 		periodField3.sendKeys(period_3);
@@ -390,130 +425,79 @@ public class ProjectCreatePage extends Components {
 				booking_amount_1, date_2, particular_value_2, period_2, booking_amount_2, payment_name_2, date_3,
 				particular_value_3, period_3, booking_amount_3, date_4, particular_value_4, period_4, booking_amount_4,
 				date_5, particular_value_5, period_5, booking_amount_5);
-		scrollToElement(addPhase1);
-		waitForElementToBeClickable(addPhase1);
-		addPhase1.click();
-		phaseNameField2.sendKeys(phase_name_2);
-		nocUpload2.sendKeys("/Users/vk14/Downloads/" + noc_document);
+		scrollToElement(addPhase_2);
+		waitForElementToBeClickable(addPhase_2);
+		addPhase_2.click();
+		phaseNameField_2.sendKeys(phase_name_2);
+		nocUpload_2.sendKeys("/Users/vk14/Downloads/" + noc_document);
+		scrollToElement(driver.findElement(By.xpath("(//div[.='Payment Plan 1'])[2]")));
+		Thread.sleep(3000);
 		driver.findElement(By.id("under-construction.1")).click();
-		paymentNameField2_1.sendKeys(payment_name_2_1);
-		dateField2_1.sendKeys(date2_1);
-		particularField2_1.sendKeys(particular_2_1);
-		periodField2_1.sendKeys(period_2_1);
-		bookingAmountField2_1.sendKeys(booking_amount_2_1);
-		scrollToElement(addPaymentShedule3);
-		waitForElementToBeClickable(addPaymentShedule3);
+		paymentNameField_2_1.sendKeys(payment_name_2_1);
+		dateField_2_1_1.sendKeys(date2_1);
+		particularField_2_1_1.sendKeys(particular_2_1);
+		periodField_2_1_1.sendKeys(period_2_1);
+		bookingAmountField_2_1_1.sendKeys(booking_amount_2_1);
+		scrollToElement(driver.findElement(By.xpath("(//button[text()='Add Payment Schedule'])[3]")));
+		waitForElementToBeClickable(driver.findElement(By.xpath("(//button[text()='Add Payment Schedule'])[3]")));
+		driver.findElement(By.xpath("(//button[text()='Add Payment Schedule'])[3]")).click();
 		dateField_2_2.sendKeys(date_2_2);
-		particularField2_2.sendKeys(particular_value_2_2);
-		periodField2_2.sendKeys(period_2_2);
-		bookingAmountField2_2.sendKeys(booking_amount_2_2);
+		particularField_1_1_2_2.sendKeys(particular_value_2_2);
+		periodField_1_1_2_2.sendKeys(period_2_2);
+		bookingAmountField_1_1_2_2.sendKeys(booking_amount_2_2);
+		Thread.sleep(2000);
 		addPaymentPlan2_1.click();
 		paymentNameField2_2.sendKeys(payment_name_2_2);
-		dateField2_3.sendKeys(date_2_3);
-		particularField2_3.sendKeys(particular_value_2_3);
-		periodField2_3.sendKeys(period_2_3);
-		bookingAmountField2_3.sendKeys(booking_amount_2_3);
-		scrollToElement(addPaymentShedule3);
-		waitForElementToBeClickable(addPaymentShedule3);
-		dateField2_4.sendKeys(date_2_4);
-		particularField2_4.sendKeys(particular_value_2_4);
-		periodField2_4.sendKeys(period_2_4);
-		bookingAmountField2_4.sendKeys(booking_amount_2_4);
-		Thread.sleep(2000);
-		clickSave();
-		Thread.sleep(2000);
-		clickDone();
+		dateField_1_1_2_3.sendKeys(date_2_3);
+		particularField_1_1_2_3.sendKeys(particular_value_2_3);
+		periodField_1_1_2_3.sendKeys(period_2_3);
+		bookingAmountField_1_1_2_3.sendKeys(booking_amount_2_3);
+		scrollToElement(driver.findElement(By.xpath("(//button[text()='Add Payment Plan'])[2]")));
+		waitForElementToBeClickable(driver.findElement(By.xpath("(//button[text()='Add Payment Schedule'])[4]")));
+		driver.findElement(By.xpath("(//button[text()='Add Payment Schedule'])[4]")).click();
+		dateField_1_1_2_4.sendKeys(date_2_4);
+		particularField_1_1_2_4.sendKeys(particular_value_2_4);
+		periodField_1_1_2_4.sendKeys(period_2_4);
+		bookingAmountField_1_1_2_4.sendKeys(booking_amount_2_4);
 	}
 
-	
-	
-	
+	/*
+	 * First phase Ready contain 1 payment plan 2 shedules second phase
+	 * Underconstruction contain 2 payment plan first plan 1 shedule and second plan
+	 * 2 shedule third phase contain 1 payment plan 1 shedule
+	 */
+	public void TwoReadyOneUnderconstructionCase(String phase_name_1, String noc_document, String payment_name_1_1,
+			String date_1_1_1, String particular_value_1_1_1, String period_1_1_1, String booking_amount_1_1_1,
+			String date_1_1_2, String particular_value_1_1_2, String period_1_1_2, String booking_amount_1_1_2,
+			String phase_name_2,String payment_name_2_1) throws InterruptedException {
+		phaseNameField1.sendKeys(phase_name_1);
+		nocUpload_1.sendKeys(noc_document);
+		firstPhasePlanNameField.sendKeys(payment_name_1_1);
+		dateField_1_1_1.sendKeys(date_1_1_1);
+		particularField_1_1_1.sendKeys(particular_value_1_1_1);
+		periodField_1_1_1.sendKeys(period_1_1_1);
+		bookingAmountField_1_1_1.sendKeys(booking_amount_1_1_1);
+		addPaymentShedule1_1.click();
+		dateField_1_1_2.sendKeys(date_1_1_2);
+		particularField_1_1_2.sendKeys(particular_value_1_1_2);
+		periodField_1_1_2.sendKeys(period_1_1_2);
+		bookingAmountField_1_1_2.sendKeys(booking_amount_1_1_2);
+		addPhase_2.click();
+		phaseNameField_2.sendKeys(phase_name_2);
+		nocUpload_2.sendKeys(noc_document);
+		underConstructionPhase_2.click();
+		paymentNameField_2_1.sendKeys(payment_name_2_1);
+		dateField_2_1_1.sendKeys(null);
+		particularField_2_1_1.sendKeys(null);
+		periodField_2_1_1.sendKeys(null);
+		bookingAmountField_2_1_1.sendKeys(null);
+	}
+
 	public void projectSave() throws InterruptedException {
 		Thread.sleep(2000);
 		clickSave();
 		Thread.sleep(2000);
 		clickDone();
-	}
-	
-	
-	
-	
-	
-	
-	// Unit status Ready and post-handover Yes and No
-	public void readyYesPhaseAndReadyNoPhase(String phase_name_1, String noc_document, String payment_name_1,
-			String date_1, String particular_value_1, String period_1, String booking_amount_1, String date_2,
-			String particular_value_2, String period_2, String booking_amount_2, String date_3,
-			String particular_value_3, String period_3, String booking_amount_3, String date_4,
-			String particular_value_4, String booking_amount_4) throws InterruptedException {
-		phaseNameField1.sendKeys(phase_name_1);
-		Thread.sleep(2000);
-		nocUpload1.sendKeys("/Users/vk14/Downloads/" + noc_document);
-
-		scrollToElement(paymentPlanElement);
-		Thread.sleep(3000);
-		WebElement unitStatus = driver.findElement(By.id("ready-status.0"));
-		unitStatus.click();
-		Thread.sleep(2000);
-		WebElement postHandoverStatus = driver
-				.findElement(By.xpath("//label[@class='form-check-label' and contains(text(),'Yes')]"));
-		postHandoverStatus.click();
-		Thread.sleep(2000);
-		paymentNameField1.sendKeys(payment_name_1);
-		dateField1.sendKeys(date_1);
-		particularField1.sendKeys(particular_value_1);
-		periodField1.sendKeys(period_1);
-		bookingAmountField1.sendKeys(booking_amount_1);
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("(//button[text()='Add Payment Schedule'])[1]")).click();
-		driver.findElement(By.xpath(
-				"//input[@name='developer_project_phases.0.project_payment_plans.0.project_payment_schedules.1.payment_schedule_date']"))
-				.sendKeys(date_2);
-		driver.findElement(By.xpath(
-				"//input[@name='developer_project_phases.0.project_payment_plans.0.project_payment_schedules.1.payment_schedule_particular']"))
-				.sendKeys(particular_value_2);
-		driver.findElement(By.xpath(
-				"//input[@name='developer_project_phases.0.project_payment_plans.0.project_payment_schedules.1.payment_schedule_period']"))
-				.sendKeys(period_2);
-		driver.findElement(By.xpath(
-				"//input[@name='developer_project_phases.0.project_payment_plans.0.project_payment_schedules.1.project_payment_amount']"))
-				.sendKeys(booking_amount_2);
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("(//button[text()='Add Payment Plan'])[1]")).click();
-		driver.findElement(By.xpath(
-				"//input[@name='developer_project_phases.0.project_payment_plans.1.project_payment_schedules.0.payment_schedule_date']"))
-				.sendKeys(date_3);
-		driver.findElement(By.xpath(
-				"//input[@name='developer_project_phases.0.project_payment_plans.1.project_payment_schedules.0.payment_schedule_particular']"))
-				.sendKeys(particular_value_3);
-		driver.findElement(By.xpath(
-				"//input[@name='developer_project_phases.0.project_payment_plans.1.project_payment_schedules.0.payment_schedule_period']"))
-				.sendKeys(period_3);
-		driver.findElement(By.xpath(
-				"//input[@name='developer_project_phases.0.project_payment_plans.1.project_payment_schedules.0.project_payment_amount']"))
-				.sendKeys(booking_amount_3);
-		driver.findElement(By.xpath("(//button[text()='Add Payment Schedule'])[2]")).click();
-		Thread.sleep(2000);
-		driver.findElement(By.xpath(
-				"//input[@name='developer_project_phases.0.project_payment_plans.1.project_payment_schedules.1.payment_schedule_date']"))
-				.sendKeys(date_4);
-		driver.findElement(By.xpath(
-				"//input[@name='developer_project_phases.0.project_payment_plans.1.project_payment_schedules.1.payment_schedule_particular']"))
-				.sendKeys(particular_value_4);
-		driver.findElement(By.xpath(
-				"//input[@name='developer_project_phases.0.project_payment_plans.1.project_payment_schedules.1.project_payment_amount']"))
-				.sendKeys(booking_amount_4);
-		Thread.sleep(2000);
-
-		driver.findElement(By.xpath("//button[text()='Add Phase']")).click();
-		scrollToElement(driver.findElement(By.xpath("//div[.='Phase 2']")));
-		driver.findElement(By.xpath("//input[@name='developer_project_phases.1.phase_name_1']")).click();
-		driver.findElement(By.id("developer_project_phases.1.noc_document"))
-				.sendKeys("/Users/vk14/Downloads/" + noc_document);
-		driver.findElement(By.id("ready-status.1")).click();
-		driver.findElement(By.id("0.1")).click();
-		Thread.sleep(2000);
-		clickSave();
 	}
 
 }

@@ -1,50 +1,99 @@
 package AgencyPortal;
 
+import java.time.Duration;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class HomePage {
-	
+import reusefiles.Components;
+
+public class HomePage extends Components {
+
 	WebDriver driver;
 
 	public HomePage(WebDriver driver) {
-		this.driver=driver;
+		super(driver);
+		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
+
 	@FindBy(xpath = "//div[text()='Users']")
 	WebElement usersButton;
-	
+
 	@FindBy(xpath = "//div[text()='Projects']")
 	WebElement projectButton;
-	
+
 	@FindBy(xpath = "//div[text()='All Properties']")
 	WebElement allPropertiesButton;
-	
+
+	@FindBy(xpath = "//div[text()='Developer']")
+	WebElement developer;
+
+	@FindBy(xpath = "//div[text()='Listings']")
+	WebElement developerListing;
+
+	@FindBy(xpath = "//div[text()='Settings']")
+	WebElement settingsButton;
+
+	@FindBy(xpath = "//div[text()='Property Specialist']")
+	WebElement propertySpecalistButton;
+
 	public void loginVerification() {
 		String currentURL = driver.getCurrentUrl();
 		String expectedURL = "http://prosper.agency.pixbit.in/dashboard";
 		org.testng.Assert.assertEquals(currentURL, expectedURL);
 	}
-	
-	public UserPage openUsers() throws InterruptedException {
+
+	public UserAdminPage openUsers() throws InterruptedException {
 		Thread.sleep(2000);
 		usersButton.click();
-		return new UserPage(driver);
+		return new UserAdminPage(driver);
 	}
 
 	public ProjectPage openProjects() throws InterruptedException {
-		Thread.sleep(2000);
-		projectButton.click();
-		return new ProjectPage(driver);
+		Thread.sleep(3000);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		if (wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()='Projects']"))) != null) {
+			projectButton.click();
+			return new ProjectPage(driver);
+		} else {
+			developer.click();
+			projectButton.click();
+			return new ProjectPage(driver);
+		}
+
 	}
 
-	public AllPropertiesPage openAllProperties() throws InterruptedException {
+	public DeveloperListingPage openAllProperties() throws InterruptedException {
 		Thread.sleep(3000);
 		allPropertiesButton.click();
-		return new AllPropertiesPage(driver);
+		return new DeveloperListingPage(driver);
+	}
+
+	public DeveloperListingPage openDeveloperListingPage() throws InterruptedException {
+		Thread.sleep(3000);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		if (wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[text()='Listings']"))) == null) {
+			developer.click();
+			developerListing.click();
+			return new DeveloperListingPage(driver);
+		} 
+		else {
+			Thread.sleep(2000);
+			developerListing.click();
+			return new DeveloperListingPage(driver);		}
+	}
+
+	public void PropertySpecalistPage() throws InterruptedException {
+		Thread.sleep(2000);
+		settingsButton.click();
+		Thread.sleep(2000);
+		propertySpecalistButton.click();
 	}
 
 }

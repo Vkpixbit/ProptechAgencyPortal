@@ -1,8 +1,8 @@
-package allproperties;
+package developers;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import AgencyPortal.AllPropertiesPage;
+import AgencyPortal.DeveloperListingPage;
 import AgencyPortal.HomePage;
 import AgencyPortal.PropertyPageValidations;
 import globalfiles.GlobalData;
@@ -12,7 +12,7 @@ public class PropertyAddValidations extends GlobalData {
 	@BeforeMethod
 	public void openPropertyAddPage() throws InterruptedException {
 		HomePage HomePage = LoginPage.login("sarath@pixbitsolutions.com","Prosper@1gxKW");
-		AllPropertiesPage AllPropertiesPage = HomePage.openAllProperties();
+		DeveloperListingPage AllPropertiesPage = HomePage.openAllProperties();
 		PropertyPageValidations PropertyPageValidations=AllPropertiesPage.openAddPropertyValidations();
 	}
 	

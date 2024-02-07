@@ -26,6 +26,7 @@ public class ProjectPage extends Components {
 	List<WebElement> projectList;
 
 	public ProjectCreatePage openAddProject() {
+		
 		addProject.click();
 		return new ProjectCreatePage(driver);
 	}

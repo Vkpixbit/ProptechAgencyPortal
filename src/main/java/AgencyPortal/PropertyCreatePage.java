@@ -4,6 +4,7 @@ import java.awt.AWTException;
 import java.util.Arrays;
 import java.util.List;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -26,11 +27,20 @@ public class PropertyCreatePage extends Components {
 	@FindBy(xpath = "//div[@id='phase_id']")
 	WebElement phaseDropdown;
 
-	@FindBy(xpath = "//div[@id='property_type_id']")
-	WebElement propertyTypeDropdwon;
-
 	@FindBy(xpath = "//input[@id='number_of_unit']")
 	WebElement unitNumberField;
+
+	@FindBy(xpath = "//button[@class='btn btn-outline-primary']")
+	WebElement chooseTeamButton;
+
+	@FindBy(xpath = "//button[@class='accordion-button collapsed']")
+	List<WebElement> listOfPsTeam;
+
+	@FindBy(xpath = "//input[@type='checkbox']")
+	List<WebElement> listOfCheckbox;
+
+	@FindBy(xpath = "//div[@id='property_type_id']")
+	WebElement propertyTypeDropdwon;
 
 	@FindBy(xpath = "//input[@id='title']")
 	WebElement titleField;
@@ -99,22 +109,25 @@ public class PropertyCreatePage extends Components {
 	WebElement reraNumberField;
 
 	@FindBy(id = "buildUpArea")
-	WebElement builtupArea;
+	public WebElement builtupArea;
 
 	@FindBy(id = "totalArea")
-	WebElement totalArea;
+	public WebElement totalArea;
 
 	@FindBy(id = "suitArea")
-	WebElement suiteAreaField;
+	public WebElement suiteAreaField;
 
 	@FindBy(id = "commonArea")
-	WebElement commonAreaField;
+	public WebElement commonAreaField;
 
 	@FindBy(id = "balconyArea")
-	WebElement balconyAreaField;
+	public WebElement balconyAreaField;
 
 	@FindBy(xpath = "//label[text()='Trakheesi*']")
 	WebElement trakheesiHeading;
+
+	@FindBy(xpath = "//input[@class='form-control flex-1']")
+	WebElement nearByAttractionSearch;
 
 	@FindBy(id = "virtualTourUrl")
 	WebElement virtualtourUrlField;
@@ -137,7 +150,10 @@ public class PropertyCreatePage extends Components {
 	@FindBy(id = "listingPrice")
 	WebElement listingPrice;
 
-	@FindBy(xpath = "//button[text()='  Choose Payment Plan']")
+	@FindBy(xpath = "//input[@id='maintanceFee']")
+	WebElement mainantenaceFee;
+
+	@FindBy(xpath = "//button[text()='Choose Payment Plan']")
 	WebElement paymentPlanButton;
 
 	@FindBy(xpath = "//h2[@class='accordion-header']")
@@ -173,7 +189,30 @@ public class PropertyCreatePage extends Components {
 	@FindBy(id = "brochure")
 	WebElement brochureUpload;
 
-	// Select the project from dropdown
+	/*
+	 * Click save button
+	 */
+	public void clickSaveButton() throws InterruptedException {
+		clickSave();
+	}
+
+	/*
+	 * click done buttton
+	 */
+	public void clickDoneButton() throws InterruptedException {
+		clickDone();
+	}
+
+	/*
+	 * Scroll down to save button
+	 */
+	public void scrollToSave() {
+		scrollToElement(save);
+	}
+
+	/*
+	 * Select the project from dropdown
+	 */
 	public void selectProject(String property_project) throws InterruptedException {
 		projectDropdown.click();
 		Thread.sleep(2000);
@@ -182,31 +221,103 @@ public class PropertyCreatePage extends Components {
 
 	}
 
-	// select the phase from dropdown
 	/*
-	 * public void selectPhase(String property_phase) throws InterruptedException {
-	 * phaseDropdown.click(); Thread.sleep(2000); WebElement requiredPhase =
-	 * driver.findElement(By.xpath("//div[text()='" + property_phase + "']"));
-	 * requiredPhase.click(); }
+	 * select the phase from dropdown
 	 */
+	public void selectPhase(String property_phase) throws InterruptedException {
+		phaseDropdown.click();
+		Thread.sleep(3000);
 
-	// Select Category Residential,Commerical
+		List<WebElement> listofElement = driver.findElements(By.xpath("//div[text()='" + property_phase + "']"));
+		System.out.println(listofElement.size());
+		
+		if(listofElement.size() > 2)
+			for(WebElement element:listofElement) {
+				if(element.getText().contains(property_phase)) {
+					driver.findElement(By.xpath("//div[text()='" + property_phase + "']")).click();
+					System.out.println("5");
+				}	
+			}
+		else {
+		}
+	}
+
+	/*
+	 * Enter Unit count
+	 */
+	public void enterNumberOfUnit(String unit_number) {
+		unitNumberField.sendKeys(unit_number);
+	}
+
+	/*
+	 * Select Property Specialist Team
+	 */
+	public void selectPropertySpecalist(String ps_team_name) throws InterruptedException {
+		chooseTeamButton.click();
+		Thread.sleep(2000);
+		for (WebElement team : listOfPsTeam) {
+			if (team.getText().contains(ps_team_name)) {
+				team.click();
+				Thread.sleep(2000);
+				for (WebElement requiredTeam : listOfCheckbox) {
+					if (requiredTeam.isDisplayed()) {
+						requiredTeam.click();
+					}
+				}
+			}
+		}
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("(//button[text()='Save'])[2]")).click();
+	}
+
+	/*
+	 * Enter Property titile
+	 */
+	public void enterPropertyTitle(String title) throws InterruptedException {
+		Thread.sleep(2000);
+		titleField.sendKeys(title);
+	}
+
+	/*
+	 * Update Property Description
+	 */
+	public void updatePropertyDescription(String description) {
+		if (descriptionField.getText().isEmpty()) {
+			descriptionField.sendKeys(description);
+		} else {
+			clearDataInField(descriptionField);
+			descriptionField.sendKeys(description);
+		}
+
+	}
+
+	/*
+	 * Select Category Residential,Commerical
+	 */
 	public void selectCategory(String property_category) {
 		WebElement requiredCategory = driver.findElement(
 				By.xpath("//label[@class='form-check-label' and contains(text(),'" + property_category + "')]"));
 		requiredCategory.click();
 	}
 
+	/*
+	 * Select Property status as Ready
+	 */
 	public void ready() {
 		driver.findElement(By.xpath("//label[@class='form-check-label' and contains(text(),'Ready')]")).click();
 	}
 
+	/*
+	 * Select property status as Underconstruction
+	 */
 	public void underconstruction() {
 		driver.findElement(By.xpath("//label[@class='form-check-label' and contains(text(),'Under Construction')]"))
 				.click();
 	}
 
-	// Select Apartment
+	/*
+	 * Select Apartment
+	 */
 	public void apartment() throws InterruptedException {
 		propertyTypeDropdwon.click();
 		Thread.sleep(2000);
@@ -214,7 +325,9 @@ public class PropertyCreatePage extends Components {
 		requiredPropertyType.click();
 	}
 
-	// Select Townhouse
+	/*
+	 * Select Townhouse
+	 */
 	public void townhouse() throws InterruptedException {
 		propertyTypeDropdwon.click();
 		Thread.sleep(2000);
@@ -222,7 +335,9 @@ public class PropertyCreatePage extends Components {
 		requiredPropertyType.click();
 	}
 
-	// Select Villa
+	/*
+	 * Select Villa
+	 */
 	public void villa() throws InterruptedException {
 		propertyTypeDropdwon.click();
 		Thread.sleep(2000);
@@ -230,15 +345,19 @@ public class PropertyCreatePage extends Components {
 		requiredPropertyType.click();
 	}
 
-	// Select Office
+	/*
+	 * Select Office
+	 */
 	public void office() throws InterruptedException {
 		propertyTypeDropdwon.click();
 		Thread.sleep(2000);
-		WebElement requiredPropertyType = driver.findElement(By.xpath("//div[text()='office']"));
+		WebElement requiredPropertyType = driver.findElement(By.xpath("//div[text()='Office']"));
 		requiredPropertyType.click();
 	}
 
-	// Select service apartment
+	/*
+	 * Select service apartment
+	 */
 	public void serviceApartment() throws InterruptedException {
 		propertyTypeDropdwon.click();
 		Thread.sleep(2000);
@@ -246,33 +365,44 @@ public class PropertyCreatePage extends Components {
 		requiredPropertyType.click();
 	}
 
-	// Enter age of property
+	/*
+	 * Enter Age of property
+	 */
 	public void ageOfPropertyEnter(String age_of_property) {
 		ageOfProperty.sendKeys(age_of_property);
 	}
 
-	// select the Emirate
-	public void selectEmirate(String emirate) throws InterruptedException {
-		emirateDropdown.click();
-		Thread.sleep(2000);
-		WebElement requiredDropdown = driver.findElement(By.xpath("//div[text()='" + emirate + "']"));
-		requiredDropdown.click();
-	}
-
-	// Upload title deed document
+	/*
+	 * Upload title deed document
+	 */
 	public void uploadTitleDeed(String title_deed_document) throws AWTException {
 		titleDeedField.sendKeys("/Users/vk14/Downloads/" + title_deed_document);
-
 	}
 
-	// select the furnishing status
+	/*
+	 * Select Furnishing status
+	 */
 	public void selectFurnishingStatus(String furnishing_status) {
 		WebElement requiredFurnishingStatus = driver.findElement(
 				By.xpath("//label[@class='form-check-label' and contains(text(),'" + furnishing_status + "')]"));
 		requiredFurnishingStatus.click();
 	}
 
-	// Select google map location
+	/*
+	 * select the Emirate
+	 */
+	public void selectEmirate(String emirate) throws InterruptedException {
+		scrollToElement(emirateDropdown);
+		Thread.sleep(2000);
+		emirateDropdown.click();
+		Thread.sleep(2000);
+		WebElement requiredDropdown = driver.findElement(By.xpath("//div[text()='" + emirate + "']"));
+		requiredDropdown.click();
+	}
+
+	/*
+	 * Select google map location
+	 */
 	public void selectMapLocation(String map_search, String selected_map) throws InterruptedException {
 		mapOpenClick.click();
 		Thread.sleep(2000);
@@ -283,7 +413,9 @@ public class PropertyCreatePage extends Components {
 		driver.findElement(By.xpath("(//button[text()='Save'])[2]")).click();
 	}
 
-	// select the location
+	/*
+	 * select the location
+	 */
 	public void selectLocation(String location) throws InterruptedException {
 		locationDropdown.click();
 		Thread.sleep(2000);
@@ -291,7 +423,9 @@ public class PropertyCreatePage extends Components {
 		requiredLocation.click();
 	}
 
-	// Select the sub location
+	/*
+	 * Select the sub location
+	 */
 	public void selectSubLocation(String sub_location) throws InterruptedException {
 		subLocationDropdown.click();
 		Thread.sleep(2000);
@@ -299,42 +433,54 @@ public class PropertyCreatePage extends Components {
 		requiredSubLocation.click();
 	}
 
-	// Enter bedroom count
+	/*
+	 * Enter bedroom count
+	 */
 	public void enterBedroomCabinCount(String bedroom_cabin_count) throws InterruptedException {
+		Thread.sleep(2000);
+		scrollToElement(bedroomCabinManualButton);
 		Thread.sleep(2000);
 		bedroomCabinManualButton.click();
 		Thread.sleep(2000);
-		bedroomCabinManualField.clear();
+		clearDataInField(bedroomCabinManualField);
 		Thread.sleep(2000);
 		bedroomCabinManualField.sendKeys(bedroom_cabin_count);
 	}
 
-	// Enter Bathroom count
+	/*
+	 * Enter Bathroom count
+	 */
 	public void enterBathroomCount(String bathroom_count) throws InterruptedException {
 		Thread.sleep(2000);
 		bathroomManualButton.click();
 		Thread.sleep(2000);
-		bathroomManualField.clear();
+		clearDataInField(bathroomManualField);
 		Thread.sleep(2000);
 		bathroomManualField.sendKeys(bathroom_count);
 	}
 
-	// Enter kitchen count
+	/*
+	 * Enter kitchen/Pantry count
+	 */
 	public void enterKitchenPantryCount(String kitchen_pantry_count) throws InterruptedException {
+		Thread.sleep(2000);
+		scrollToElement(kitchenPantryManualButton);
 		Thread.sleep(2000);
 		kitchenPantryManualButton.click();
 		Thread.sleep(2000);
-		kitchenPantryManualField.clear();
+		clearDataInField(kitchenPantryManualField);
 		Thread.sleep(2000);
 		kitchenPantryManualField.sendKeys(kitchen_pantry_count);
 	}
 
-	// Enter Balcony count
+	/*
+	 * Enter Balcony count
+	 */
 	public void enterBalconyCount(String balcony_count) throws InterruptedException {
 		Thread.sleep(2000);
 		balconyManualButton.click();
 		Thread.sleep(2000);
-		balconyManualField.clear();
+		clearDataInField(balconyManualField);
 		Thread.sleep(2000);
 		balconyManualField.sendKeys(balcony_count);
 	}
@@ -342,41 +488,41 @@ public class PropertyCreatePage extends Components {
 	// Enter Parking count
 	public void enterParkingsCount(String parking_count) throws InterruptedException {
 		Thread.sleep(2000);
+		scrollToElement(parkingManualButton);
 		parkingManualButton.click();
 		Thread.sleep(2000);
-		parkingManualField.clear();
+		clearDataInField(parkingManualField);
 		Thread.sleep(2000);
 		parkingManualField.sendKeys(parking_count);
 	}
 
-	// Select trakheesi status as "Yes"
+	/*
+	 * Select Trakheesi status as "Yes"
+	 */
 	public void trakheesiYes(String trakheesi_number, String rera_transaction_number) throws InterruptedException {
-		WebElement trakheesiStatusField = driver
-				.findElement(By.xpath("//label[text()='Yes']/preceding-sibling::input"));
-		trakheesiStatusField.click();
+		waitForElementToBeClickable(trakheesiNumberField);
 		trakheesiNumberField.sendKeys(trakheesi_number);
 		reraNumberField.sendKeys(rera_transaction_number);
+		Thread.sleep(2000);
 	}
 
-	// Select trakheesi status as "No"
-	public void trakheesiNo() throws InterruptedException {
-		WebElement trakheesiStatusField = driver.findElement(By.xpath("//label[text()='No']/preceding-sibling::input"));
-		trakheesiStatusField.click();
-	}
-
-	// Checking property type condtion and enter value in suite area,common area and
-	// balcony area
 	/*
-	 * public void enterSuiteCommonBalconyArea(String property_type, String
-	 * suite_area, String common_area, String balcony_area) { if
-	 * ("Apartment".equalsIgnoreCase(property_type) ||
-	 * "Office".equalsIgnoreCase(property_type) ||
-	 * "Service Apartment".equalsIgnoreCase(property_type)) {
-	 * suiteAreaField.sendKeys(suite_area); commonAreaField.sendKeys(common_area);
-	 * balconyAreaField.sendKeys(balcony_area); } }
+	 * Select trakheesi status as "No"
 	 */
+	public void trakheesiNo() throws InterruptedException {
+		WebElement trakheesiNoStatusField = driver
+				.findElement(By.xpath("(//label[@class='form-check-label' and contains(text(),'No')])[2]"));
+		scrollToElement(trakheesiNoStatusField);
+		waitForElementToBeClickable(trakheesiNoStatusField);
+		Thread.sleep(2000);
+		trakheesiNoStatusField.click();
+		Thread.sleep(2000);
 
-	// Select amenities
+	}
+
+	/*
+	 * Select amenities
+	 */
 	public void selectAmenities(String amenities_1, String amenities_2, String amenities_3)
 			throws InterruptedException {
 		driver.findElement(By.xpath("//button[text()='Choose Amenities']")).click();
@@ -392,57 +538,78 @@ public class PropertyCreatePage extends Components {
 			}
 		}
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("(//button[text()='Save'])[2]")).click();
+		driver.findElement(By.xpath("(//button[@type='submit'])[2]")).click();
 	}
 
-	// Select near by attractions
-	public void selectNearByAttractions(String attraction_1, String attraction_2, String attraction_3)
+	/*
+	 * Select near by attractions
+	 */
+	public void selectNearByAttractions(String attraction_1, String attraction_2, String attraction_3,String attraction_4)
 			throws InterruptedException {
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//button[text()='Add Nearby Attractions']")).click();
-		List<WebElement> nearByAttractionList = driver.findElements(By.xpath("//input[@type='checkbox']"));
+		Thread.sleep(2000);
 		List<String> targetAttractionText = Arrays.asList(attraction_1, attraction_2, attraction_3);
-
-		for (String targetButtonText : targetAttractionText) {
-			for (WebElement button2 : nearByAttractionList) {
-				if (button2.getAttribute("name").equalsIgnoreCase(targetButtonText)) {
-					Thread.sleep(2000);
-					button2.click();
-				}
-			}
+		for (String target : targetAttractionText) {
+			nearByAttractionSearch.sendKeys(target);
+			nearByAttractionSearch.sendKeys(Keys.ENTER);
+			Thread.sleep(3000);
+			driver.findElement(By.xpath("//div[@class='ms-2 pb-3 form-check']")).click();
+			clearDataInField(nearByAttractionSearch);
+			Thread.sleep(2000);
 		}
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("(//button[text()='Save'])[2]")).click();
+		driver.findElement(By.xpath("(//button[@type='submit'])[2]")).click();
 	}
 
-	// Enter Price Details
+	/*
+	 * Enter Price ranges and price details
+	 */
 	public void enterPriceDetails(String price_from, String price_to, String listing_price)
 			throws InterruptedException {
-		// scrollToElement(paymentPlanButton);
 		Thread.sleep(2000);
 		priceFrom.sendKeys(price_from);
 		priceTo.sendKeys(price_to);
 		listingPrice.sendKeys(listing_price);
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 	}
 
-	// Choosing Payment Plans
+	/*
+	 * Enter Maintenance Fee/Service charge
+	 */
+	public void enterMaintenanceFee(String mainteance_fee) throws InterruptedException {
+		Thread.sleep(2000);
+		mainantenaceFee.sendKeys(mainteance_fee);
+	}
+
+	/*
+	 * Choosing Payment Plans
+	 */
 	public void choosePaymentPlan(String payment_plan) throws InterruptedException {
-		visbilityOfElement(paymentPlanButton);
+		scrollToElement(paymentPlanButton);
+		Thread.sleep(2000);
 		paymentPlanButton.click();
 		Thread.sleep(2000);
 		WebElement selectedPaymentPlan = driver.findElement(By.xpath("//button[contains(.,'" + payment_plan + "')]"));
 		selectedPaymentPlan.click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("//input[@id='3'])[1]")).click();
+		for (WebElement plancheck : listOfCheckbox) {
+			if (plancheck.isDisplayed()) {
+				plancheck.click();
+			}
+		}
 		clickDone();
 	}
 
-	// Add rental Details as "Yes" with "Dewa Number"
+	/*
+	 * Add rental Details as "Yes" with "Dewa Number"
+	 */
 	public void rentalYesWithDewa(String rented_at, String rented_until, String contract_amount, String dewa_number)
 			throws InterruptedException {
+		scrollToElement(paymentPlanButton);
 		WebElement selectedRentalStatus = driver
-				.findElement(By.xpath("//label[@class='form-check-label' and contains(text(),'Yes')]"));
-		visbilityOfElement(selectedRentalStatus);
+				.findElement(By.xpath("(//label[@class='form-check-label' and contains(text(),'Yes')])[2]"));
+		scrollToElement(selectedRentalStatus);
 		selectedRentalStatus.click();
 		Thread.sleep(2000);
 		rentedAtField.sendKeys(rented_at);
@@ -451,12 +618,15 @@ public class PropertyCreatePage extends Components {
 		dewaNumberField.sendKeys(dewa_number);
 	}
 
-	// Add rental Details as "Yes" with "Dewa Number"
+	/*
+	 * Add rental Details as "Yes" with "Dewa Number"
+	 */
 	public void rentalYesWithOutDewa(String rented_at, String rented_until, String contract_amount)
 			throws InterruptedException {
+		scrollToElement(paymentPlanButton);
 		WebElement selectedRentalStatus = driver
-				.findElement(By.xpath("//label[@class='form-check-label' and contains(text(),'Yes')]"));
-		visbilityOfElement(selectedRentalStatus);
+				.findElement(By.xpath("(//label[@class='form-check-label' and contains(text(),'Yes')])[2]"));
+		scrollToElement(selectedRentalStatus);
 		selectedRentalStatus.click();
 		Thread.sleep(2000);
 		rentedAtField.sendKeys(rented_at);
@@ -464,346 +634,56 @@ public class PropertyCreatePage extends Components {
 		contractAmount.sendKeys(contract_amount);
 	}
 
-	// Add rental Details as "No"
+	/*
+	 * Add rental Details as "No"
+	 */
 	public void rentalNo() throws InterruptedException {
 		WebElement selectedRentalStatus = driver
-				.findElement(By.xpath("//label[@class='form-check-label' and contains(text(),'No')]"));
+				.findElement(By.xpath("(//label[@class='form-check-label' and contains(text(),'No')])[3]"));
 		visbilityOfElement(selectedRentalStatus);
 		selectedRentalStatus.click();
 	}
 
-	// Upload files for apartment
+	/*
+	 * Upload files for apartment
+	 */
 	public void addFilesApartment(String thumbnail, String other_images, String plan_image, String video_file) {
 		thumbnailUpload.sendKeys("/Users/vk14/Downloads/property_images/apartment/" + thumbnail);
 		addMoreImages.sendKeys("/Users/vk14/Downloads/property_images/other images/" + other_images);
 		planImageField.sendKeys("/Users/vk14/Downloads/property_images/plan/" + plan_image);
 		videoUpload.sendKeys("/Users/vk14/Downloads/" + video_file);
 	}
-	
-	// Upload files for apartment
-		public void addFilesVilla(String thumbnail, String other_images, String plan_image, String video_file) {
-			thumbnailUpload.sendKeys("/Users/vk14/Downloads/property_images/villa/" + thumbnail);
-			addMoreImages.sendKeys("/Users/vk14/Downloads/property_images/other images/" + other_images);
-			planImageField.sendKeys("/Users/vk14/Downloads/property_images/plan/" + plan_image);
-			videoUpload.sendKeys("/Users/vk14/Downloads/" + video_file);
-		}
-		
 
-	// Enter URL details
-	public void enterUrlDetails(String virtual_tour_url, String video_tour_url, String youtube_url, String brochure) {
+	/*
+	 * Upload files for Villa
+	 */
+	public void addFilesVilla(String thumbnail, String other_images, String plan_image, String video_file) {
+		thumbnailUpload.sendKeys("/Users/vk14/Downloads/property_images/villa/" + thumbnail);
+		addMoreImages.sendKeys("/Users/vk14/Downloads/property_images/other images/" + other_images);
+		planImageField.sendKeys("/Users/vk14/Downloads/property_images/plan/" + plan_image);
+		videoUpload.sendKeys("/Users/vk14/Downloads/" + video_file);
+	}
+
+	/*
+	 * Enter URL details
+	 */
+	public void enterUrlDetails(String virtual_tour_url, String video_tour_url, String youtube_url, String brochure)
+			throws InterruptedException {
 		virtualtourUrlField.sendKeys(virtual_tour_url);
 		videtourUrlField.sendKeys(video_tour_url);
 		youtubeUrlField.sendKeys(youtube_url);
+		waitForElementToBeClickable(brochureUpload);
 		brochureUpload.sendKeys("/Users/vk14/Downloads/" + brochure);
+
 	}
 
-	// Add property with "Ready" property status,"apartment" property type and add
-	// sublocation and add video file , enter all URL's
-	// we select project with one phase no payment plans
-	// Trakheesi selected as "Yes" and Rental selected as "Yes" and Dewa
-	public void apartmentPropertyWithReadyStatus(String property_project, String unit_number, String title,
-			String description, String property_category, String age_of_property, String title_deed_document,
-			String furnishing_status, String emirate, String map_search, String selected_map, String location,
-			String sub_location, String bedroom_cabin_count, String bathroom_count, String kitchen_pantry_count,
-			String balcony_count, String parking_count, String trakheesi_number, String rera_transaction_number,
-			String builtup_area, String total_area, String suite_area, String common_area, String balcony_area,
-			String amenities_1, String amenities_2, String amenities_3, String amenities_4, String attraction_1,
-			String attraction_2, String attraction_3, String price_from, String price_to, String listing_price,
-			String rented_at, String rented_until, String contract_amount, String dewa_number, String thumbnail,
-			String other_images, String plan_image, String video_file, String virtual_tour_url, String video_tour_url,
-			String youtube_url, String brochure) throws InterruptedException, AWTException {
-		selectProject(property_project);
-		unitNumberField.sendKeys(unit_number);
-		titleField.sendKeys(title);
-		descriptionField.sendKeys(description);
-		selectCategory(property_category);
-		ready();
-		apartment();
-		ageOfPropertyEnter(age_of_property);
-		uploadTitleDeed(title_deed_document);
-		selectCategory(furnishing_status);
-		selectEmirate(emirate);
-		selectMapLocation(map_search, selected_map);
-		selectLocation(location);
-		selectSubLocation(sub_location);
-		enterBedroomCabinCount(bedroom_cabin_count);
-		enterBathroomCount(bathroom_count);
-		scrollToElement(kitchen_pantry_click);
-		enterKitchenPantryCount(kitchen_pantry_count);
-		enterBalconyCount(balcony_count);
-		enterParkingsCount(parking_count);
-		trakheesiYes(trakheesi_number, rera_transaction_number);
-		builtupArea.sendKeys(builtup_area);
-		totalArea.sendKeys(total_area);
-		suiteAreaField.sendKeys(suite_area);
-		commonAreaField.sendKeys(common_area);
-		balconyAreaField.sendKeys(balcony_area);
-		selectAmenities(amenities_1, amenities_2, amenities_3);
-		selectNearByAttractions(attraction_1, attraction_2, attraction_3);
-		enterPriceDetails(price_from, price_to, listing_price);
-		rentalYesWithDewa(rented_at, rented_until, contract_amount, dewa_number);
-		addFilesApartment(thumbnail, other_images, plan_image, video_file);
-		enterUrlDetails(virtual_tour_url, video_tour_url, youtube_url, brochure);
-		scrollToElement(driver.findElement(By.xpath("//button[text()='Save']")));
-		clickSave();
-		waitForElementToBeClickable(driver.findElement(By.xpath("//button[text()='Done']")));
-		clickDone();
+	/*
+	 * Upload Property Brochure
+	 */
+	public void uploadBrochure(String brochure) throws InterruptedException {
+		waitForElementToBeClickable(brochureUpload);
+		brochureUpload.sendKeys("/Users/vk14/Downloads/" + brochure);
+		Thread.sleep(2000);
 	}
 
-	// Add property with "Ready" property status,"villa" property type and add
-	// sublocation and add video file , enter all URL's
-	// we select project with one phase no payment plans
-	// Trakheesi selected as "Yes" and Rental selected as "No"
-	public void villaPropertyWithReadyStatus(String property_project, String unit_number, String title,
-			String description, String property_category, String age_of_property, String title_deed_document,
-			String furnishing_status, String emirate, String map_search, String selected_map, String location,
-			String sub_location, String bedroom_cabin_count, String bathroom_count, String kitchen_pantry_count,
-			String balcony_count, String parking_count, String trakheesi_number, String rera_transaction_number,
-			String builtup_area, String total_area, String amenities_1, String amenities_2, String amenities_3,
-			String amenities_4, String attraction_1, String attraction_2, String attraction_3, String price_from,
-			String price_to, String listing_price, String rented_at, String rented_until, String contract_amount,
-			String dewa_number, String thumbnail, String other_images, String plan_image, String video_file,
-			String virtual_tour_url, String video_tour_url, String youtube_url, String brochure)
-			throws InterruptedException, AWTException {
-		selectProject(property_project);
-		unitNumberField.sendKeys(unit_number);
-		titleField.sendKeys(title);
-		descriptionField.sendKeys(description);
-		selectCategory(property_category);
-		ready();
-		villa();
-		ageOfPropertyEnter(age_of_property);
-		uploadTitleDeed(title_deed_document);
-		selectCategory(furnishing_status);
-		selectEmirate(emirate);
-		selectMapLocation(map_search, selected_map);
-		selectLocation(location);
-		selectSubLocation(sub_location);
-		enterBedroomCabinCount(bedroom_cabin_count);
-		enterBathroomCount(bathroom_count);
-		scrollToElement(kitchen_pantry_click);
-		enterKitchenPantryCount(kitchen_pantry_count);
-		enterBalconyCount(balcony_count);
-		enterParkingsCount(parking_count);
-		trakheesiYes(trakheesi_number, rera_transaction_number);
-		builtupArea.sendKeys(builtup_area);
-		totalArea.sendKeys(total_area);
-		selectAmenities(amenities_1, amenities_2, amenities_3);
-		selectNearByAttractions(attraction_1, attraction_2, attraction_3);
-		enterPriceDetails(price_from, price_to, listing_price);
-		rentalYesWithDewa(rented_at, rented_until, contract_amount, dewa_number);
-		addFilesVilla(thumbnail, other_images, plan_image, video_file);
-		enterUrlDetails(virtual_tour_url, video_tour_url, youtube_url, brochure);
-		scrollToElement(driver.findElement(By.xpath("//button[text()='Save']")));
-		clickSave();
-		waitForElementToBeClickable(driver.findElement(By.xpath("//button[text()='Done']")));
-		clickDone();
-	}
-
-	// Add property with "Ready" property status,"townhouse" property type and add
-	// sublocation and add video file , enter all URL's
-	// we select project with one phase no payment plans
-	// Trakheesi selected as "Yes" and Rental selected as "No"
-	public void townhousePropertyWithReadyStatus(String property_project, String unit_number, String title,
-			String description, String property_category, String age_of_property, String title_deed_document,
-			String furnishing_status, String emirate, String map_search, String selected_map, String location,
-			String sub_location, String bedroom_cabin_count, String bathroom_count, String kitchen_pantry_count,
-			String balcony_count, String parking_count, String trakheesi_number, String rera_transaction_number,
-			String builtup_area, String total_area, String amenities_1, String amenities_2, String amenities_3,
-			String amenities_4, String attraction_1, String attraction_2, String attraction_3, String price_from,
-			String price_to, String listing_price, String rented_at, String rented_until, String contract_amount,
-			String dewa_number, String thumbnail, String other_images, String plan_image, String video_file,
-			String virtual_tour_url, String video_tour_url, String youtube_url, String brochure)
-			throws InterruptedException, AWTException {
-		selectProject(property_project);
-		unitNumberField.sendKeys(unit_number);
-		titleField.sendKeys(title);
-		descriptionField.sendKeys(description);
-		selectCategory(property_category);
-		ready();
-		townhouse();
-		ageOfPropertyEnter(age_of_property);
-		uploadTitleDeed(title_deed_document);
-		selectCategory(furnishing_status);
-		selectEmirate(emirate);
-		selectMapLocation(map_search, selected_map);
-		selectLocation(location);
-		selectSubLocation(sub_location);
-		enterBedroomCabinCount(bedroom_cabin_count);
-		enterBathroomCount(bathroom_count);
-		scrollToElement(kitchen_pantry_click);
-		enterKitchenPantryCount(kitchen_pantry_count);
-		enterBalconyCount(balcony_count);
-		enterParkingsCount(parking_count);
-		trakheesiYes(trakheesi_number, rera_transaction_number);
-		builtupArea.sendKeys(builtup_area);
-		totalArea.sendKeys(total_area);
-		selectAmenities(amenities_1, amenities_2, amenities_3);
-		selectNearByAttractions(attraction_1, attraction_2, attraction_3);
-		enterPriceDetails(price_from, price_to, listing_price);
-		rentalYesWithDewa(rented_at, rented_until, contract_amount, dewa_number);
-		addFiles(thumbnail, other_images, plan_image, video_file);
-		enterUrlDetails(virtual_tour_url, video_tour_url, youtube_url, brochure);
-		scrollToElement(driver.findElement(By.xpath("//button[text()='Save']")));
-		clickSave();
-		waitForElementToBeClickable(driver.findElement(By.xpath("//button[text()='Done']")));
-		clickDone();
-	}
-
-	// Add property with "Ready" property status,"office" property type and add
-	// sublocation and add video file , enter all URL's
-	// we select project with one phase no payment plans
-	// Trakheesi selected as "Yes" and Rental selected as "No"
-	public void officePropertyWithReadyStatus(String property_project, String unit_number, String title,
-			String description, String property_category, String age_of_property, String title_deed_document,
-			String furnishing_status, String emirate, String map_search, String selected_map, String location,
-			String sub_location, String bedroom_cabin_count, String bathroom_count, String kitchen_pantry_count,
-			String balcony_count, String parking_count, String trakheesi_number, String rera_transaction_number,
-			String builtup_area, String total_area, String suite_area, String common_area, String balcony_area,
-			String amenities_1, String amenities_2, String amenities_3, String amenities_4, String attraction_1,
-			String attraction_2, String attraction_3, String price_from, String price_to, String listing_price,
-			String rented_at, String rented_until, String contract_amount, String dewa_number, String thumbnail,
-			String other_images, String plan_image, String video_file, String virtual_tour_url, String video_tour_url,
-			String youtube_url, String brochure) throws InterruptedException, AWTException {
-		selectProject(property_project);
-		unitNumberField.sendKeys(unit_number);
-		titleField.sendKeys(title);
-		descriptionField.sendKeys(description);
-		selectCategory(property_category);
-		ready();
-		office();
-		ageOfPropertyEnter(age_of_property);
-		uploadTitleDeed(title_deed_document);
-		selectCategory(furnishing_status);
-		selectEmirate(emirate);
-		selectMapLocation(map_search, selected_map);
-		selectLocation(location);
-		selectSubLocation(sub_location);
-		enterBedroomCabinCount(bedroom_cabin_count);
-		enterBathroomCount(bathroom_count);
-		scrollToElement(kitchen_pantry_click);
-		enterKitchenPantryCount(kitchen_pantry_count);
-		enterBalconyCount(balcony_count);
-		enterParkingsCount(parking_count);
-		trakheesiYes(trakheesi_number, rera_transaction_number);
-		builtupArea.sendKeys(builtup_area);
-		totalArea.sendKeys(total_area);
-		suiteAreaField.sendKeys(suite_area);
-		commonAreaField.sendKeys(common_area);
-		balconyAreaField.sendKeys(balcony_area);
-		selectAmenities(amenities_1, amenities_2, amenities_3);
-		selectNearByAttractions(attraction_1, attraction_2, attraction_3);
-		enterPriceDetails(price_from, price_to, listing_price);
-		rentalYesWithDewa(rented_at, rented_until, contract_amount, dewa_number);
-		addFiles(thumbnail, other_images, plan_image, video_file);
-		enterUrlDetails(virtual_tour_url, video_tour_url, youtube_url, brochure);
-		scrollToElement(driver.findElement(By.xpath("//button[text()='Save']")));
-		clickSave();
-		waitForElementToBeClickable(driver.findElement(By.xpath("//button[text()='Done']")));
-		clickDone();
-	}
-
-	// Add property as service apartment with "Ready" status
-	// Add the sub location,url fields and upload video
-	// we select project with one phase no payment plans
-	// Trakheesi selected as "Yes" and Rental selected as "Yes"
-	public void serviceApartmentPropertyWithReadyStatus(String property_project, String unit_number, String title,
-			String description, String property_category, String age_of_property, String title_deed_document,
-			String furnishing_status, String emirate, String map_search, String selected_map, String location,
-			String sub_location, String bedroom_cabin_count, String bathroom_count, String kitchen_pantry_count,
-			String balcony_count, String parking_count, String trakheesi_number, String rera_transaction_number,
-			String builtup_area, String total_area, String suite_area, String common_area, String balcony_area,
-			String amenities_1, String amenities_2, String amenities_3, String amenities_4, String attraction_1,
-			String attraction_2, String attraction_3, String price_from, String price_to, String listing_price,
-			String rented_at, String rented_until, String contract_amount, String dewa_number, String thumbnail,
-			String other_images, String plan_image, String video_file, String virtual_tour_url, String video_tour_url,
-			String youtube_url, String brochure) throws InterruptedException, AWTException {
-		selectProject(property_project);
-		unitNumberField.sendKeys(unit_number);
-		titleField.sendKeys(title);
-		descriptionField.sendKeys(description);
-		selectCategory(property_category);
-		ready();
-		serviceApartment();
-		ageOfPropertyEnter(age_of_property);
-		uploadTitleDeed(title_deed_document);
-		selectCategory(furnishing_status);
-		selectEmirate(emirate);
-		selectMapLocation(map_search, selected_map);
-		selectLocation(location);
-		selectSubLocation(sub_location);
-		enterBedroomCabinCount(bedroom_cabin_count);
-		enterBathroomCount(bathroom_count);
-		scrollToElement(kitchen_pantry_click);
-		enterKitchenPantryCount(kitchen_pantry_count);
-		enterBalconyCount(balcony_count);
-		enterParkingsCount(parking_count);
-		trakheesiYes(trakheesi_number, rera_transaction_number);
-		builtupArea.sendKeys(builtup_area);
-		totalArea.sendKeys(total_area);
-		suiteAreaField.sendKeys(suite_area);
-		commonAreaField.sendKeys(common_area);
-		balconyAreaField.sendKeys(balcony_area);
-		selectAmenities(amenities_1, amenities_2, amenities_3);
-		selectNearByAttractions(attraction_1, attraction_2, attraction_3);
-		enterPriceDetails(price_from, price_to, listing_price);
-		rentalYesWithDewa(rented_at, rented_until, contract_amount, dewa_number);
-		addFiles(thumbnail, other_images, plan_image, video_file);
-		enterUrlDetails(virtual_tour_url, video_tour_url, youtube_url, brochure);
-		scrollToElement(driver.findElement(By.xpath("//button[text()='Save']")));
-		clickSave();
-		waitForElementToBeClickable(driver.findElement(By.xpath("//button[text()='Done']")));
-		clickDone();
-	}
-
-	// Property type as "Apartment" with "Under construction" status
-	// sub location and urls and video files are uploading
-	// Trkheesi as "No" and Rental as "Rental with Dewa"
-	// Select project with payment plans
-	public void apartmentPropertyWithUnderConstructionStatus(String property_project, String unit_number, String title,
-			String description, String property_category, String age_of_property, String title_deed_document,
-			String furnishing_status, String emirate, String map_search, String selected_map, String location,
-			String sub_location, String bedroom_cabin_count, String bathroom_count, String kitchen_pantry_count,
-			String balcony_count, String parking_count, String builtup_area, String total_area, String suite_area,
-			String common_area, String balcony_area, String amenities_1, String amenities_2, String amenities_3,
-			String amenities_4, String attraction_1, String attraction_2, String attraction_3, String price_from,
-			String price_to, String listing_price,String payment_plan,String rented_at, String rented_until, String contract_amount,
-			String thumbnail, String other_images, String plan_image, String video_file,
-			String virtual_tour_url, String video_tour_url, String youtube_url, String brochure) throws InterruptedException {
-		selectProject(property_project);
-		unitNumberField.sendKeys(unit_number);
-		titleField.sendKeys(title);
-		descriptionField.sendKeys(description);
-		selectCategory(property_category);
-		underconstruction();
-		apartment();
-		selectCategory(furnishing_status);
-		selectEmirate(emirate);
-		selectMapLocation(map_search, selected_map);
-		selectLocation(location);
-		selectSubLocation(sub_location);
-		enterBedroomCabinCount(bedroom_cabin_count);
-		enterBathroomCount(bathroom_count);
-		scrollToElement(kitchen_pantry_click);
-		enterKitchenPantryCount(kitchen_pantry_count);
-		enterBalconyCount(balcony_count);
-		enterParkingsCount(parking_count);
-		trakheesiNo();
-		builtupArea.sendKeys(builtup_area);
-		totalArea.sendKeys(total_area);
-		suiteAreaField.sendKeys(suite_area);
-		commonAreaField.sendKeys(common_area);
-		balconyAreaField.sendKeys(balcony_area);
-		selectAmenities(amenities_1, amenities_2, amenities_3);
-		selectNearByAttractions(attraction_1, attraction_2, attraction_3);
-		enterPriceDetails(price_from, price_to, listing_price);
-		choosePaymentPlan(payment_plan);
-		rentalYesWithOutDewa(rented_at, rented_until, contract_amount);
-		addFiles(thumbnail, other_images, plan_image, video_file);
-		enterUrlDetails(virtual_tour_url, video_tour_url, youtube_url, brochure);
-		scrollToElement(driver.findElement(By.xpath("//button[text()='Save']")));
-		clickSave();
-		waitForElementToBeClickable(driver.findElement(By.xpath("//button[text()='Done']")));
-		clickDone();
-	}
 }

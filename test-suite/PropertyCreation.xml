@@ -3,9 +3,9 @@
 <suite name="Suite">
 	<test thread-count="5" name="LoginTest">
 		<classes>
-			<class name="allproperties.CreateProperty">
+			<class name="developers.CreateProperty">
 				<methods>
-					<include name="verifyPropertyAdd_2"></include>
+					<include name="developer_property_adding_apartment_underconstruction_without_trakheesi_and_rent_fillotherfields"></include>
 				</methods>
 			</class>
 		</classes>

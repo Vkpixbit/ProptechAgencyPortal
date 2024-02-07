@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>LoginTest</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Nov 01 10:00:56 IST 2023</td>
+<td>Started on:</td><td>Wed Feb 07 14:07:52 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>49 seconds (49071 ms)</td>
+<tr><td>Total time:</td><td>185 seconds (185866 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,8 +67,8 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
@@ -76,91 +76,10 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='allproperties.CreateProperty.verifyPropertyAdd_2()'><b>verifyPropertyAdd_2</b><br>Test class: allproperties.CreateProperty<br>Parameters: {email_id=greeshma@pixbitsolutions.com, contract_amount=760000, total_area=4859.5, dewa_number=6985DS/64, video_tour_url=http://video-tour.com, bedroom_cabin_count=7, description=This property should be very nice property,and this is very good, balcony_count=4, amenities_4=Shared Gym, map_search=Dubai, selected_map=Dubai Mall - Dubai - United Arab Emirates, other_images=download (1).jpg, video_file=Video_20230928_173908_680_1.mp4, title=Dar Alkawathar Real Estate, amenities_1=Electricity support, amenities_3=Basement Parking, amenities_2=Concierge services, password=Prosper@1CWZ9, unit_number=58, plan_image=download (2).png, kitchen_pantry_count=5, property_category=Residential, rented_at=10/05/2019, listing_price=110000, rented_until=15/09/2022, bathroom_count=4, property_project=PropNex Mall, attraction_2=Gaia Dubai, age_of_property=22, attraction_3=Shakespeare and Co. Al Saqr Business Tower, thumbnail=images (1).jpg, attraction_1=La Maison, price_from=700000, brochure=proposal-document.pdf, price_to=1500000, property_phase=Al Jazeera , parking_count=5, furnishing_status=Furnished, trakheesi_number=64646AF/757, title_deed_document=Aspect Tower 1003 Title Deed.pdf, sub_location=Natural History Museum, virtual_tour_url=http://virtual.com, emirate=Sharjah, rera_transaction_number=64564566, location=Sharjah Desert Park, youtube_url=http://youtube.com, builtup_area=845.64}</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[text()=&apos;Dubai Mall - Dubai - United Arab Emirates&apos;]&quot;}
-  (Session info: chrome=118.0.5993.117)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.14.1&apos;, revision: &apos;03f8ede370&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;13.5.2&apos;, java.version: &apos;17.0.8.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [92e3aa96c3d4c393db54f61ebecdde51, findElement {using=xpath, value=//span[text()=&apos;Dubai Mall - Dubai - United Arab Emirates&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 118.0.5993.117, chrome: {chromedriverVersion: 118.0.5993.70 (e52f33f30b91..., userDataDir: /var/folders/3n/9s6pyz5j60z...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49347}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:49347/devtoo..., se:cdpVersion: 118.0.5993.117, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 92e3aa96c3d4c393db54f61ebecdde51
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
-	at AgencyPortal.PropertyCreatePage.selectMapLocation(PropertyCreatePage.java:281)
-	at AgencyPortal.PropertyCreatePage.villaPropertyWithReadyStatus(PropertyCreatePage.java:579)
-	at allproperties.CreateProperty.verifyPropertyAdd_2(CreateProperty.java:50)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1108367077", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1108367077'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[text()=&apos;Dubai Mall - Dubai - United Arab Emirates&apos;]&quot;}
-  (Session info: chrome=118.0.5993.117)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.14.1&apos;, revision: &apos;03f8ede370&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;13.5.2&apos;, java.version: &apos;17.0.8.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [92e3aa96c3d4c393db54f61ebecdde51, findElement {using=xpath, value=//span[text()=&apos;Dubai Mall - Dubai - United Arab Emirates&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 118.0.5993.117, chrome: {chromedriverVersion: 118.0.5993.70 (e52f33f30b91..., userDataDir: /var/folders/3n/9s6pyz5j60z...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49347}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:49347/devtoo..., se:cdpVersion: 118.0.5993.117, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 92e3aa96c3d4c393db54f61ebecdde51
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
-	at AgencyPortal.PropertyCreatePage.selectMapLocation(PropertyCreatePage.java:281)
-	at AgencyPortal.PropertyCreatePage.villaPropertyWithReadyStatus(PropertyCreatePage.java:579)
-	at allproperties.CreateProperty.verifyPropertyAdd_2(CreateProperty.java:50)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.testng.TestRunner.privateRun(TestRunner.java:848)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-	at org.testng.TestNG.runSuites(TestNG.java:1114)
-	at org.testng.TestNG.run(TestNG.java:1082)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>39</td>
-<td>allproperties.CreateProperty@2af004b</td></tr>
+<td title='developers.CreateProperty.developer_property_adding_apartment_underconstruction_without_trakheesi_and_rent_fillotherfields()'><b>developer_property_adding_apartment_underconstruction_without_trakheesi_and_rent_fillotherfields</b><br>Test class: developers.CreateProperty<br>Parameters: {email_id=faris@pixbitsolutions.com, video_tour_url=http://video-tour.com, ps_team_name=Team Property Hacker, bedroom_cabin_count=8, description=Property refers to something that is owned by a person, group, or entity. It can include land, buildings, or possessions. In simple words, property is what someone owns or possesses., balcony_count=4, amenities_4=Shared Gym, map_search=Dubai, selected_map=Dubai Mall - Dubai - United Arab Emirates, other_images=download (1).jpg, video_file=Video_20230928_173908_680_1.mp4, title=Lootah Real Estate Devel, amenities_1=Electricity support, amenities_3=Basement Parking, amenities_2=Concierge services, suite_area_sqm=584.5, password=Prosper@1wFIM, unit_number=19, plan_image=download (2).png, kitchen_pantry_count=1, property_category=Residential, listing_price=890000, bathroom_count=4, payment_plan=Inital payment Plan, property_project=Palm Jebel Ali, attraction_2=Zahr El Laymoun Alasly, attraction_3=Silkor Downtown Dubai Branch - مركز سيلكور وسط مدينة دبي, total_area_sqft=485339.5443, thumbnail=images (1).jpg, attraction_1=Diving in Dubai Mall Aquarium with Al Boom Diving, price_from=700000, brochure=proposal-document.pdf, builtup_area_sqft=84565.634, price_to=1500000, mainteance_fee=5400, property_phase=Palm Jumeirah, balcony_area_sqm=600.43, parking_count=5, furnishing_status=Semi Furnished, title_deed_document=Aspect Tower 1003 Title Deed.pdf, sub_location=Natural History Museum, virtual_tour_url=http://virtual.com, emirate=Sharjah, common_area_sqm=483.43, location=Sharjah Desert Park, youtube_url=http://youtube.com}</td>
+<td></td>
+<td>177</td>
+<td>developers.CreateProperty@1caa0244</td></tr>
 </table><p>
 </body>
 </html>

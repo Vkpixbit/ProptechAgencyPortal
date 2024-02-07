@@ -1,6 +1,7 @@
 package reusefiles;
 
 import java.time.Duration;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -20,10 +21,13 @@ public class Components {
 	}
 	
 	@FindBy(xpath = "//button[text()='Save']")
-	WebElement save;
+	public  WebElement save;
 	
 	@FindBy(xpath = "//button[text()='Done']")
 	WebElement done;
+	
+	@FindBy(xpath = "//button[text()='Save & Initiate Trakheesi']")
+	WebElement saveAndInitate;
 	
 	@FindBy(xpath = "//button[text()='Save & Send Password']")
 	WebElement saveSendPassword;
@@ -35,16 +39,24 @@ public class Components {
 		js.executeScript("arguments[0].scrollIntoView();", text);
 	}
 	
-	public void clickSave() {
+	public void saveAndInitateTrakheesi() {
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		executor.executeScript("arguments[0].click();", saveAndInitate);
+	}
+	
+	public void clickSave() throws InterruptedException {
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", save);
 	}
 	
-	public void clickDone() {
+	public void clickDone() throws InterruptedException {
+		Thread.sleep(2000);
+		waitForElementToBeClickable(done);
 		done.click();
+		Thread.sleep(2000);
 	}
 	
-	public void saveAndSendPassword() {
+	public void saveAndSendPassword() throws InterruptedException {
 		saveSendPassword.click();
 	}
 	
@@ -66,5 +78,21 @@ public class Components {
 		Select select=new Select(element);
 		select.selectByVisibleText(country);
 	}
+	
+	public void clearDataInField(WebElement element) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].value='';", element);
+	}
+	
+	public boolean isElementClickable(WebElement webElement) {
+        try {
+        	WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(30));
+            WebElement element = wait.until(ExpectedConditions.elementToBeClickable(webElement));
+            return element != null && element.isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
 
 }
