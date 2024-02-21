@@ -5,7 +5,7 @@
 		<classes>
 			<class name="project.CreateProject">
 				<methods>
-					<include name="projectWithReadyAndPosthandoverNo"></include>
+					<include name="twoPhaseReadyAndUnderConstruction_1"></include>
 				</methods>
 			</class>
 		</classes>

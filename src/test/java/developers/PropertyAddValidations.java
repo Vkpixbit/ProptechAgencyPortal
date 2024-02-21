@@ -2,10 +2,11 @@ package developers;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import AgencyPortal.DeveloperListingPage;
-import AgencyPortal.HomePage;
-import AgencyPortal.PropertyPageValidations;
+
 import globalfiles.GlobalData;
+import pages.DeveloperListingPage;
+import pages.HomePage;
+import pages.PropertyPageValidations;
 
 public class PropertyAddValidations extends GlobalData {
 

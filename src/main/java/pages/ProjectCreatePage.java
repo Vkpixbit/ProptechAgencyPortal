@@ -1,4 +1,4 @@
-package AgencyPortal;
+package pages;
 
 import java.awt.AWTException;
 import org.openqa.selenium.By;

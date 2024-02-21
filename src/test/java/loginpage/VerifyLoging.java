@@ -6,8 +6,9 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.testng.annotations.DataProvider;
-import AgencyPortal.HomePage;
+
 import globalfiles.GlobalData;
+import pages.HomePage;
 
 public class VerifyLoging extends GlobalData {
 

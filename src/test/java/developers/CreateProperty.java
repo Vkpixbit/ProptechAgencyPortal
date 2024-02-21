@@ -7,10 +7,10 @@ import java.util.List;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import AgencyPortal.DeveloperListingPage;
-import AgencyPortal.HomePage;
-import AgencyPortal.PropertyCreatePage;
 import globalfiles.GlobalData;
+import pages.DeveloperListingPage;
+import pages.HomePage;
+import pages.PropertyCreatePage;
 
 public class CreateProperty extends GlobalData {
 
@@ -33,7 +33,7 @@ public class CreateProperty extends GlobalData {
 		PropertyCreatePage.updatePropertyDescription(input.get("description"));
 		PropertyCreatePage.selectCategory(input.get("property_category"));
 		PropertyCreatePage.ready();
-		PropertyCreatePage.apartment();
+		PropertyCreatePage.serviceApartment();
 		PropertyCreatePage.ageOfPropertyEnter(input.get("age_of_property"));
 		PropertyCreatePage.uploadTitleDeed(input.get("title_deed_document"));
 		PropertyCreatePage.selectFurnishingStatus(input.get("furnishing_status"));
@@ -134,7 +134,7 @@ public class CreateProperty extends GlobalData {
 	public Object[][] villa_property_ready_with_allfields() throws IOException {
 		List<HashMap<String, String>> value = getJsondata(
 				"/Users/vk14/eclipse-workspace/AgencyPortal/src/test/java/data/property_data_with_all_fields.json");
-		return new Object[][] { { value.get(2) } };
+		return new Object[][] { { value.get(1) } };
 	}
 
 	/*

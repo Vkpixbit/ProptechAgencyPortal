@@ -8,10 +8,10 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import AgencyPortal.HomePage;
-import AgencyPortal.PropertySpecalistCreationPage;
-import AgencyPortal.PropertySpecalistPage;
 import globalfiles.GlobalData;
+import pages.HomePage;
+import pages.PropertySpecalistCreationPage;
+import pages.PropertySpecalistPage;
 
 public class PropertySpecalistCreation extends GlobalData {
 

@@ -2,27 +2,27 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-02-07T14:07:52 IST" name="Suite" finished-at="2024-02-07T14:10:58 IST" duration-ms="185866">
+  <suite started-at="2024-02-20T12:48:20 IST" name="Suite" finished-at="2024-02-20T12:51:31 IST" duration-ms="190956">
     <groups>
     </groups>
-    <test started-at="2024-02-07T14:07:52 IST" name="LoginTest" finished-at="2024-02-07T14:10:58 IST" duration-ms="185866">
+    <test started-at="2024-02-20T12:48:20 IST" name="LoginTest" finished-at="2024-02-20T12:51:31 IST" duration-ms="190956">
       <class name="developers.CreateProperty">
-        <test-method is-config="true" signature="openAgencyPortal()[pri:0, instance:developers.CreateProperty@1caa0244]" started-at="2024-02-07T14:07:52 IST" name="openAgencyPortal" finished-at="2024-02-07T14:07:59 IST" duration-ms="7521" status="PASS">
+        <test-method is-config="true" signature="openAgencyPortal()[pri:0, instance:developers.CreateProperty@1caa0244]" started-at="2024-02-20T12:48:20 IST" name="openAgencyPortal" finished-at="2024-02-20T12:48:29 IST" duration-ms="8937" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openAgencyPortal -->
-        <test-method signature="developer_property_adding_apartment_underconstruction_without_trakheesi_and_rent_fillotherfields(java.util.HashMap)[pri:0, instance:developers.CreateProperty@1caa0244]" started-at="2024-02-07T14:08:00 IST" name="developer_property_adding_apartment_underconstruction_without_trakheesi_and_rent_fillotherfields" data-provider="apartment_property_underconstruction_without_trakheesi_rental" finished-at="2024-02-07T14:10:57 IST" duration-ms="177904" status="PASS">
+        <test-method signature="developer_property_adding_apartment_underconstruction_without_trakheesi_and_rent_fillotherfields(java.util.HashMap)[pri:0, instance:developers.CreateProperty@1caa0244]" started-at="2024-02-20T12:48:29 IST" name="developer_property_adding_apartment_underconstruction_without_trakheesi_and_rent_fillotherfields" data-provider="apartment_property_underconstruction_without_trakheesi_rental" finished-at="2024-02-20T12:51:31 IST" duration-ms="181549" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{email_id=faris@pixbitsolutions.com, video_tour_url=http://video-tour.com, ps_team_name=Team Property Hacker, bedroom_cabin_count=8, description=Property refers to something that is owned by a person, group, or entity. It can include land, buildings, or possessions. In simple words, property is what someone owns or possesses., balcony_count=4, amenities_4=Shared Gym, map_search=Dubai, selected_map=Dubai Mall - Dubai - United Arab Emirates, other_images=download (1).jpg, video_file=Video_20230928_173908_680_1.mp4, title=Lootah Real Estate Devel, amenities_1=Electricity support, amenities_3=Basement Parking, amenities_2=Concierge services, suite_area_sqm=584.5, password=Prosper@1wFIM, unit_number=19, plan_image=download (2).png, kitchen_pantry_count=1, property_category=Residential, listing_price=890000, bathroom_count=4, payment_plan=Inital payment Plan, property_project=Palm Jebel Ali, attraction_2=Zahr El Laymoun Alasly, attraction_3=Silkor Downtown Dubai Branch - مركز سيلكور وسط مدينة دبي, total_area_sqft=485339.5443, thumbnail=images (1).jpg, attraction_1=Diving in Dubai Mall Aquarium with Al Boom Diving, price_from=700000, brochure=proposal-document.pdf, builtup_area_sqft=84565.634, price_to=1500000, mainteance_fee=5400, property_phase=Palm Jumeirah, balcony_area_sqm=600.43, parking_count=5, furnishing_status=Semi Furnished, title_deed_document=Aspect Tower 1003 Title Deed.pdf, sub_location=Natural History Museum, virtual_tour_url=http://virtual.com, emirate=Sharjah, common_area_sqm=483.43, location=Sharjah Desert Park, youtube_url=http://youtube.com}]]>
+                <![CDATA[{email_id=amal@pixbitsolutions.com, video_tour_url=http://video-tour.com, ps_team_name=Team Dev Properties, bedroom_cabin_count=8, description=Property refers to something that is owned by a person, group, or entity. It can include land, buildings, or possessions. In simple words, property is what someone owns or possesses., balcony_count=4, amenities_4=Shared Gym, map_search=Dubai, selected_map=Dubai Mall - Dubai - United Arab Emirates, other_images=download (1).jpg, video_file=Video_20230928_173908_680_1.mp4, title=PAL Developments, amenities_1=Electricity support, amenities_3=Basement Parking, amenities_2=Concierge services, suite_area_sqm=584.5, password=Prosper@1RY8G, unit_number=3, plan_image=download (2).png, kitchen_pantry_count=1, property_category=Residential, listing_price=890000, bathroom_count=4, payment_plan=Inital payment Plan, property_project=BSO City, attraction_2=Zahr El Laymoun Alasly, attraction_3=Silkor Downtown Dubai Branch - مركز سيلكور وسط مدينة دبي, total_area_sqft=485339.5443, thumbnail=images (1).jpg, attraction_1=Diving in Dubai Mall Aquarium with Al Boom Diving, price_from=56000, brochure=proposal-document.pdf, builtup_area_sqft=84565.634, price_to=1500000, mainteance_fee=3000, property_phase=Dubai Media City, balcony_area_sqm=600.43, parking_count=5, furnishing_status=Semi Furnished, title_deed_document=Aspect Tower 1003 Title Deed.pdf, sub_location=Natural History Museum, virtual_tour_url=http://virtual.com, emirate=Sharjah, common_area_sqm=483.43, location=Sharjah Desert Park, youtube_url=http://youtube.com}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- developer_property_adding_apartment_underconstruction_without_trakheesi_and_rent_fillotherfields -->
-        <test-method is-config="true" signature="close()[pri:0, instance:developers.CreateProperty@1caa0244]" started-at="2024-02-07T14:10:57 IST" name="close" finished-at="2024-02-07T14:10:58 IST" duration-ms="202" status="PASS">
+        <test-method is-config="true" signature="close()[pri:0, instance:developers.CreateProperty@1caa0244]" started-at="2024-02-20T12:51:31 IST" name="close" finished-at="2024-02-20T12:51:31 IST" duration-ms="204" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close -->

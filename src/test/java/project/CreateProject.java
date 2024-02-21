@@ -8,13 +8,14 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.testng.annotations.DataProvider;
-import AgencyPortal.HomePage;
-import AgencyPortal.ProjectCreatePage;
-import AgencyPortal.ProjectPage;
-import AgencyPortal.ProjectShowPage;
+
 import globalfiles.GlobalData;
 import io.cucumber.java.hu.Ha.Has;
 import io.cucumber.java.it.Data;
+import pages.HomePage;
+import pages.ProjectCreatePage;
+import pages.ProjectPage;
+import pages.ProjectShowPage;
 
 public class CreateProject extends GlobalData {
 

@@ -1,4 +1,4 @@
-package AgencyPortal;
+package pages;
 
 import java.awt.AWTException;
 import java.util.Arrays;
@@ -226,16 +226,16 @@ public class PropertyCreatePage extends Components {
 	 */
 	public void selectPhase(String property_phase) throws InterruptedException {
 		phaseDropdown.click();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 
-		List<WebElement> listofElement = driver.findElements(By.xpath("//div[text()='" + property_phase + "']"));
-		System.out.println(listofElement.size());
+		List<WebElement> listofElement = driver.findElements(By.xpath("//div[contains(@class, 'option')]"));
+
 		
 		if(listofElement.size() > 2)
 			for(WebElement element:listofElement) {
 				if(element.getText().contains(property_phase)) {
 					driver.findElement(By.xpath("//div[text()='" + property_phase + "']")).click();
-					System.out.println("5");
+					break;
 				}	
 			}
 		else {
@@ -606,7 +606,6 @@ public class PropertyCreatePage extends Components {
 	 */
 	public void rentalYesWithDewa(String rented_at, String rented_until, String contract_amount, String dewa_number)
 			throws InterruptedException {
-		scrollToElement(paymentPlanButton);
 		WebElement selectedRentalStatus = driver
 				.findElement(By.xpath("(//label[@class='form-check-label' and contains(text(),'Yes')])[2]"));
 		scrollToElement(selectedRentalStatus);
@@ -623,7 +622,7 @@ public class PropertyCreatePage extends Components {
 	 */
 	public void rentalYesWithOutDewa(String rented_at, String rented_until, String contract_amount)
 			throws InterruptedException {
-		scrollToElement(paymentPlanButton);
+		//scrollToElement(paymentPlanButton);
 		WebElement selectedRentalStatus = driver
 				.findElement(By.xpath("(//label[@class='form-check-label' and contains(text(),'Yes')])[2]"));
 		scrollToElement(selectedRentalStatus);

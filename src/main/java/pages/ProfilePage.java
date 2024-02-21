@@ -1,4 +1,4 @@
-package AgencyPortal;
+package pages;
 
 public class ProfilePage {
 

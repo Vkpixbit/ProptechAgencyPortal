@@ -23,8 +23,8 @@ import org.testng.annotations.BeforeTest;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import AgencyPortal.LoginPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import pages.LoginPage;
 
 public class GlobalData {
 

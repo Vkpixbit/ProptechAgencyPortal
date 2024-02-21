@@ -8,12 +8,13 @@ import java.util.List;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.DataProvider;
-import AgencyPortal.UserAdminCreatePage;
-import AgencyPortal.HomePage;
-import AgencyPortal.UserAdminPage;
+
 import globalfiles.GlobalData;
 import io.cucumber.java.en.Given;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import pages.HomePage;
+import pages.UserAdminCreatePage;
+import pages.UserAdminPage;
 
 public class CreateAgencyUsersAdmins extends GlobalData {
 	

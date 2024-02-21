@@ -2,8 +2,8 @@ package propertyspecalist;
 
 import org.testng.annotations.Test;
 
-import AgencyPortal.HomePage;
 import globalfiles.GlobalData;
+import pages.HomePage;
 
 public class PropertySpecalistTeam  extends GlobalData {
 
