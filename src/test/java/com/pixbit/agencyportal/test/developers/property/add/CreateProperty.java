@@ -1,26 +1,25 @@
-package developers;
+package com.pixbit.agencyportal.test.developers.property.add;
 
 import java.awt.AWTException;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
+
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import globalfiles.GlobalData;
-import pages.DeveloperListingPage;
-import pages.HomePage;
-import pages.PropertyCreatePage;
-
+import com.pixbit.agencyportal.globalfiles.GlobalData;
+import com.pixbit.agencyportal.pages.DeveloperListingPage;
+import com.pixbit.agencyportal.pages.HomePage;
+import com.pixbit.agencyportal.pages.PropertyCreatePage;
+ 
 public class CreateProperty extends GlobalData {
 
 	/*
-	 * Adding developer Property with fill all required and optional details make
-	 * trakheesi yes and enter details select Ready and Apartment case select rental
-	 * as Yes and add details
+	 * Property Add with Apartment with Ready and enter trakheesi details
 	 */
-	@Test(dataProvider = "apartment_property_ready_with_allfields")
-	public void developer_property_adding_with_ready_apartment_allfields(HashMap<String, String> input)
+	@Test(dataProvider = "apartment_ready_fill_all_fields_data")
+	public void apartment_ready_fill_all_fields(HashMap<String, String> input)
 			throws InterruptedException, AWTException {
 		HomePage HomePage = LoginPage.login(input.get("email_id"), input.get("password"));
 		DeveloperListingPage DeveloperListingPage = HomePage.openDeveloperListingPage();
@@ -33,7 +32,7 @@ public class CreateProperty extends GlobalData {
 		PropertyCreatePage.updatePropertyDescription(input.get("description"));
 		PropertyCreatePage.selectCategory(input.get("property_category"));
 		PropertyCreatePage.ready();
-		PropertyCreatePage.serviceApartment();
+		PropertyCreatePage.apartment();
 		PropertyCreatePage.ageOfPropertyEnter(input.get("age_of_property"));
 		PropertyCreatePage.uploadTitleDeed(input.get("title_deed_document"));
 		PropertyCreatePage.selectFurnishingStatus(input.get("furnishing_status"));
@@ -53,9 +52,9 @@ public class CreateProperty extends GlobalData {
 		PropertyCreatePage.commonAreaField.sendKeys(input.get("common_area_sqm"));
 		PropertyCreatePage.balconyAreaField.sendKeys(input.get("balcony_area_sqm"));
 		PropertyCreatePage.selectAmenities(input.get("amenities_1"), input.get("amenities_2"),
-				input.get("amenities_3"));
+				input.get("amenities_3"),input.get("amenities_4"));
 		PropertyCreatePage.selectNearByAttractions(input.get("attraction_1"), input.get("attraction_2"),
-				input.get("attraction_3"),input.get("attraction_4"));
+				input.get("attraction_3"), input.get("attraction_4"));
 		PropertyCreatePage.enterPriceDetails(input.get("price_from"), input.get("price_to"),
 				input.get("listing_price"));
 		PropertyCreatePage.enterMaintenanceFee(input.get("mainteance_fee"));
@@ -68,13 +67,12 @@ public class CreateProperty extends GlobalData {
 				input.get("youtube_url"), input.get("brochure"));
 		PropertyCreatePage.clickSave();
 		PropertyCreatePage.clickDone();
-
 	}
 
 	@DataProvider
-	public Object[][] apartment_property_ready_with_allfields() throws IOException {
-		List<HashMap<String, String>> value = getJsondata(
-				"/Users/vk14/eclipse-workspace/AgencyPortal/src/test/java/data/property_data_with_all_fields.json");
+	public Object[][] apartment_ready_fill_all_fields_data() throws IOException {
+		List<HashMap<String, String>> value = getJsondata(System.getProperty("user.dir")
+				+ "/src/test/java/com/pixbit/agencyportal/developer/property/data/property_data_with_all_fields.json");
 		return new Object[][] { { value.get(0) } };
 	}
 
@@ -113,9 +111,9 @@ public class CreateProperty extends GlobalData {
 		PropertyCreatePage.builtupArea.sendKeys(input.get("builtup_area_sqft"));
 		PropertyCreatePage.totalArea.sendKeys(input.get("total_area_sqft"));
 		PropertyCreatePage.selectAmenities(input.get("amenities_1"), input.get("amenities_2"),
-				input.get("amenities_3"));
+				input.get("amenities_3"),input.get("amenities_4"));
 		PropertyCreatePage.selectNearByAttractions(input.get("attraction_1"), input.get("attraction_2"),
-				input.get("attraction_3"),input.get("attraction_4"));
+				input.get("attraction_3"), input.get("attraction_4"));
 		PropertyCreatePage.enterPriceDetails(input.get("price_from"), input.get("price_to"),
 				input.get("listing_price"));
 		PropertyCreatePage.enterMaintenanceFee(input.get("mainteance_fee"));
@@ -132,8 +130,8 @@ public class CreateProperty extends GlobalData {
 
 	@DataProvider
 	public Object[][] villa_property_ready_with_allfields() throws IOException {
-		List<HashMap<String, String>> value = getJsondata(
-				"/Users/vk14/eclipse-workspace/AgencyPortal/src/test/java/data/property_data_with_all_fields.json");
+		List<HashMap<String, String>> value = getJsondata(System.getProperty("user.dir")
+				+ "/src/test/java/com/pixbit/agencyportal/developer/property/data/property_data_with_all_fields.json");
 		return new Object[][] { { value.get(1) } };
 	}
 
@@ -174,9 +172,9 @@ public class CreateProperty extends GlobalData {
 		PropertyCreatePage.commonAreaField.sendKeys(input.get("common_area_sqm"));
 		PropertyCreatePage.balconyAreaField.sendKeys(input.get("balcony_area_sqm"));
 		PropertyCreatePage.selectAmenities(input.get("amenities_1"), input.get("amenities_2"),
-				input.get("amenities_3"));
+				input.get("amenities_3"),input.get("amenities_4"));
 		PropertyCreatePage.selectNearByAttractions(input.get("attraction_1"), input.get("attraction_2"),
-				input.get("attraction_3"),input.get("attraction_4"));
+				input.get("attraction_3"), input.get("attraction_4"));
 		PropertyCreatePage.enterPriceDetails(input.get("price_from"), input.get("price_to"),
 				input.get("listing_price"));
 		PropertyCreatePage.enterMaintenanceFee(input.get("mainteance_fee"));
@@ -193,8 +191,8 @@ public class CreateProperty extends GlobalData {
 
 	@DataProvider
 	public Object[][] office_property_ready_with_allfields() throws IOException {
-		List<HashMap<String, String>> value = getJsondata(
-				"/Users/vk14/eclipse-workspace/AgencyPortal/src/test/java/data/property_data_with_all_fields.json");
+		List<HashMap<String, String>> value = getJsondata(System.getProperty("user.dir")
+				+ "/src/test/java/com/pixbit/agencyportal/developer/property/data/property_data_with_all_fields.json");
 		return new Object[][] { { value.get(2) } };
 	}
 
@@ -235,9 +233,9 @@ public class CreateProperty extends GlobalData {
 		PropertyCreatePage.commonAreaField.sendKeys(input.get("common_area_sqm"));
 		PropertyCreatePage.balconyAreaField.sendKeys(input.get("balcony_area_sqm"));
 		PropertyCreatePage.selectAmenities(input.get("amenities_1"), input.get("amenities_2"),
-				input.get("amenities_3"));
+				input.get("amenities_3"),input.get("amenities_4"));
 		PropertyCreatePage.selectNearByAttractions(input.get("attraction_1"), input.get("attraction_2"),
-				input.get("attraction_3"),input.get("attraction_4"));
+				input.get("attraction_3"), input.get("attraction_4"));
 		PropertyCreatePage.enterPriceDetails(input.get("price_from"), input.get("price_to"),
 				input.get("listing_price"));
 		PropertyCreatePage.enterMaintenanceFee(input.get("mainteance_fee"));
@@ -254,8 +252,8 @@ public class CreateProperty extends GlobalData {
 
 	@DataProvider
 	public Object[][] serviceapartment_property_underconstruction_with_allfields() throws IOException {
-		List<HashMap<String, String>> value = getJsondata(
-				"/Users/vk14/eclipse-workspace/AgencyPortal/src/test/java/data/property_data_with_all_fields.json");
+		List<HashMap<String, String>> value = getJsondata(System.getProperty("user.dir")
+				+ "/src/test/java/com/pixbit/agencyportal/developer/property/data/property_data_with_all_fields.json");
 		return new Object[][] { { value.get(3) } };
 	}
 
@@ -293,9 +291,9 @@ public class CreateProperty extends GlobalData {
 		PropertyCreatePage.builtupArea.sendKeys(input.get("builtup_area_sqft"));
 		PropertyCreatePage.totalArea.sendKeys(input.get("total_area_sqft"));
 		PropertyCreatePage.selectAmenities(input.get("amenities_1"), input.get("amenities_2"),
-				input.get("amenities_3"));
+				input.get("amenities_3"),input.get("amenities_4"));
 		PropertyCreatePage.selectNearByAttractions(input.get("attraction_1"), input.get("attraction_2"),
-				input.get("attraction_3"),input.get("attraction_4"));
+				input.get("attraction_3"), input.get("attraction_4"));
 		PropertyCreatePage.enterPriceDetails(input.get("price_from"), input.get("price_to"),
 				input.get("listing_price"));
 		PropertyCreatePage.enterMaintenanceFee(input.get("mainteance_fee"));
@@ -312,8 +310,8 @@ public class CreateProperty extends GlobalData {
 
 	@DataProvider
 	public Object[][] townhouse_property_underconstruction_with_allfields() throws IOException {
-		List<HashMap<String, String>> value = getJsondata(
-				"/Users/vk14/eclipse-workspace/AgencyPortal/src/test/java/data/property_data_with_all_fields.json");
+		List<HashMap<String, String>> value = getJsondata(System.getProperty("user.dir")+
+				"/src/test/java/com/pixbit/agencyportal/developer/property/data/property_data_with_all_fields.json");
 		return new Object[][] { { value.get(4) } };
 	}
 
@@ -354,9 +352,9 @@ public class CreateProperty extends GlobalData {
 		PropertyCreatePage.commonAreaField.sendKeys(input.get("common_area_sqm"));
 		PropertyCreatePage.balconyAreaField.sendKeys(input.get("balcony_area_sqm"));
 		PropertyCreatePage.selectAmenities(input.get("amenities_1"), input.get("amenities_2"),
-				input.get("amenities_3"));
+				input.get("amenities_3"),input.get("amenities_4"));
 		PropertyCreatePage.selectNearByAttractions(input.get("attraction_1"), input.get("attraction_2"),
-				input.get("attraction_3"),input.get("attraction_4"));
+				input.get("attraction_3"), input.get("attraction_4"));
 		PropertyCreatePage.enterPriceDetails(input.get("price_from"), input.get("price_to"),
 				input.get("listing_price"));
 		PropertyCreatePage.enterMaintenanceFee(input.get("mainteance_fee"));
@@ -372,8 +370,8 @@ public class CreateProperty extends GlobalData {
 
 	@DataProvider
 	public Object[][] apartment_property_underconstruction_without_trakheesi_rental() throws IOException {
-		List<HashMap<String, String>> value = getJsondata(
-				"/Users/vk14/eclipse-workspace/AgencyPortal/src/test/java/data/property_add_with_all_data_except_trakheesi_details.json");
+		List<HashMap<String, String>> value = getJsondata(System.getProperty("user.dir")
+				+ "/src/test/java/com/pixbit/agencyportal/developer/property/data/property_add_with_all_data_except_trakheesi_details.json");
 		return new Object[][] { { value.get(0) } };
 	}
 
@@ -410,9 +408,9 @@ public class CreateProperty extends GlobalData {
 		PropertyCreatePage.builtupArea.sendKeys(input.get("builtup_area_sqft"));
 		PropertyCreatePage.totalArea.sendKeys(input.get("total_area_sqft"));
 		PropertyCreatePage.selectAmenities(input.get("amenities_1"), input.get("amenities_2"),
-				input.get("amenities_3"));
+				input.get("amenities_3"),input.get("amenities_4"));
 		PropertyCreatePage.selectNearByAttractions(input.get("attraction_1"), input.get("attraction_2"),
-				input.get("attraction_3"),input.get("attraction_4"));
+				input.get("attraction_3"), input.get("attraction_4"));
 		PropertyCreatePage.enterPriceDetails(input.get("price_from"), input.get("price_to"),
 				input.get("listing_price"));
 		PropertyCreatePage.enterMaintenanceFee(input.get("mainteance_fee"));
@@ -428,8 +426,8 @@ public class CreateProperty extends GlobalData {
 
 	@DataProvider
 	public Object[][] villa_property_underconstruction_without_rental_rental() throws IOException {
-		List<HashMap<String, String>> value = getJsondata(
-				"/Users/vk14/eclipse-workspace/AgencyPortal/src/test/java/data/property_add_with_all_data_except_trakheesi_details.json");
+		List<HashMap<String, String>> value = getJsondata(System.getProperty("user.dir")
+				+ "/src/test/java/com/pixbit/agencyportal/developer/property/data/property_add_with_all_data_except_trakheesi_details.json");
 		return new Object[][] { { value.get(1) } };
 	}
 
@@ -468,17 +466,17 @@ public class CreateProperty extends GlobalData {
 		PropertyCreatePage.commonAreaField.sendKeys(input.get("common_area_sqm"));
 		PropertyCreatePage.balconyAreaField.sendKeys(input.get("balcony_area_sqm"));
 		PropertyCreatePage.selectAmenities(input.get("amenities_1"), input.get("amenities_2"),
-				input.get("amenities_3"));
+				input.get("amenities_3"),input.get("amenities_4"));
 		PropertyCreatePage.selectNearByAttractions(input.get("attraction_1"), input.get("attraction_2"),
-				input.get("attraction_3"),input.get("attraction_4"));
+				input.get("attraction_3"), input.get("attraction_4"));
 		PropertyCreatePage.enterPriceDetails(input.get("price_from"), input.get("price_to"),
 				input.get("listing_price"));
-		//PropertyCreatePage.choosePaymentPlan(input.get("payment_plan"));
+		// PropertyCreatePage.choosePaymentPlan(input.get("payment_plan"));
 		PropertyCreatePage.rentalYesWithOutDewa(input.get("rented_at"), input.get("rented_until"),
 				input.get("contract_amount"));
 		PropertyCreatePage.addFilesApartment(input.get("thumbnail"), input.get("other_images"), input.get("plan_image"),
 				input.get("video_file"));
-		PropertyCreatePage.uploadBrochure(input.get("brochure"));
+		// PropertyCreatePage.uploadBrochure(input.get("brochure"));
 		PropertyCreatePage.saveAndInitateTrakheesi();
 		PropertyCreatePage.clickDone();
 	}
@@ -510,8 +508,8 @@ public class CreateProperty extends GlobalData {
 
 	@DataProvider
 	public Object[][] property_with_ready_commerical_notfurnished() throws IOException {
-		List<HashMap<String, String>> value = getJsondata(
-				"/Users/vk14/eclipse-workspace/AgencyPortal/src/test/java/data/developer_property_with_trakheesi_and_other_autoselecting.json");
+		List<HashMap<String, String>> value = getJsondata(System.getProperty("user.dir")
+				+ "/src/test/java/com/pixbit/agencyportal/developer/property/data/developer_property_with_trakheesi_and_other_autoselecting.json");
 		return new Object[][] { { value.get(0) } };
 	}
 
@@ -627,5 +625,7 @@ public class CreateProperty extends GlobalData {
 				"/Users/vk14/eclipse-workspace/AgencyPortal/src/test/java/data/property_data_with_autoselected_fields_trakheesi_no.json");
 		return new Object[][] { { value.get(1) } };
 	}
+	
+
 
 }

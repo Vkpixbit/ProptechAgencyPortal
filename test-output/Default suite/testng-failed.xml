@@ -3,16 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="developers.CreateProperty">
+      <class name="com.pixbit.agencyportal.smoketesting.SmokeTestingCases">
         <methods>
-          <include name="developer_property_adding_with_alldata" invocation-numbers="0"/>
           <include name="close"/>
-          <include name="developer_property_add_without_trakheesi_and_autofill_data" invocation-numbers="0"/>
-          <include name="developer_property_add_without_trakheesi_and_fill_other" invocation-numbers="0"/>
-          <include name="developer_property_add_with_only_trakheesi_and_autofill_data" invocation-numbers="0"/>
           <include name="openAgencyPortal"/>
+          <include name="change_sub_status_property" invocation-numbers="0"/>
         </methods>
-      </class> <!-- developers.CreateProperty -->
+      </class> <!-- com.pixbit.agencyportal.smoketesting.SmokeTestingCases -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

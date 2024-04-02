@@ -1,4 +1,4 @@
-package pages;
+package com.pixbit.agencyportal.pages;
 
 import java.awt.AWTException;
 import java.util.Arrays;
@@ -66,8 +66,11 @@ public class PropertyCreatePage extends Components {
 	@FindBy(xpath = "//input[@class='form-control flex-1']")
 	WebElement mapSearchField;
 
-	@FindBy(xpath = "//div[@id='locationId']")
+	@FindBy(xpath = "(//div[@class=' css-1xc3v61-indicatorContainer'])[5]")
 	WebElement locationDropdown;
+	
+	@FindBy(xpath = "(//div[@class=' css-19bb58m']//input)[5]")
+	WebElement locationSearch;
 
 	@FindBy(xpath = "//div[@id='subLocationId']")
 	WebElement subLocationDropdown;
@@ -216,9 +219,7 @@ public class PropertyCreatePage extends Components {
 	public void selectProject(String property_project) throws InterruptedException {
 		projectDropdown.click();
 		Thread.sleep(2000);
-		WebElement requiredProject = driver.findElement(By.xpath("//div[text()='" + property_project + "']"));
-		requiredProject.click();
-
+		driver.findElement(By.xpath("//div[text()='" + property_project + "']")).click();
 	}
 
 	/*
@@ -230,7 +231,6 @@ public class PropertyCreatePage extends Components {
 
 		List<WebElement> listofElement = driver.findElements(By.xpath("//div[contains(@class, 'option')]"));
 
-		
 		if(listofElement.size() > 2)
 			for(WebElement element:listofElement) {
 				if(element.getText().contains(property_phase)) {
@@ -281,14 +281,11 @@ public class PropertyCreatePage extends Components {
 	/*
 	 * Update Property Description
 	 */
-	public void updatePropertyDescription(String description) {
-		if (descriptionField.getText().isEmpty()) {
-			descriptionField.sendKeys(description);
-		} else {
-			clearDataInField(descriptionField);
-			descriptionField.sendKeys(description);
-		}
-
+	public void updatePropertyDescription(String description) throws InterruptedException {
+		Thread.sleep(2000);
+		clearDataInField(descriptionField);
+		Thread.sleep(2000);		
+		descriptionField.sendKeys(description);
 	}
 
 	/*
@@ -417,8 +414,11 @@ public class PropertyCreatePage extends Components {
 	 * select the location
 	 */
 	public void selectLocation(String location) throws InterruptedException {
+		Thread.sleep(2000);
 		locationDropdown.click();
 		Thread.sleep(2000);
+		locationSearch.sendKeys(location);
+		Thread.sleep(11000);	
 		WebElement requiredLocation = driver.findElement(By.xpath("//div[text()='" + location + "']"));
 		requiredLocation.click();
 	}
@@ -523,11 +523,11 @@ public class PropertyCreatePage extends Components {
 	/*
 	 * Select amenities
 	 */
-	public void selectAmenities(String amenities_1, String amenities_2, String amenities_3)
+	public void selectAmenities(String amenities_1, String amenities_2, String amenities_3,String amenities_4)
 			throws InterruptedException {
 		driver.findElement(By.xpath("//button[text()='Choose Amenities']")).click();
 		List<WebElement> amenitiesButtons = driver.findElements(By.xpath("//button[@class='ms-2 mt-3 btn border ']"));
-		List<String> targetAmenitiesTexts = Arrays.asList(amenities_1, amenities_2, amenities_3);
+		List<String> targetAmenitiesTexts = Arrays.asList(amenities_1, amenities_2, amenities_3,amenities_4);
 
 		for (String targetButtonText : targetAmenitiesTexts) {
 			for (WebElement button1 : amenitiesButtons) {
@@ -548,8 +548,7 @@ public class PropertyCreatePage extends Components {
 			throws InterruptedException {
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//button[text()='Add Nearby Attractions']")).click();
-		Thread.sleep(2000);
-		List<String> targetAttractionText = Arrays.asList(attraction_1, attraction_2, attraction_3);
+		List<String> targetAttractionText = Arrays.asList(attraction_1, attraction_2, attraction_3,attraction_4);
 		for (String target : targetAttractionText) {
 			nearByAttractionSearch.sendKeys(target);
 			nearByAttractionSearch.sendKeys(Keys.ENTER);
@@ -662,6 +661,26 @@ public class PropertyCreatePage extends Components {
 		planImageField.sendKeys("/Users/vk14/Downloads/property_images/plan/" + plan_image);
 		videoUpload.sendKeys("/Users/vk14/Downloads/" + video_file);
 	}
+	
+	/*
+	 * Upload files for Townhouse
+	 */
+	public void addFilesTownhouse(String thumbnail, String other_images, String plan_image, String video_file) {
+		thumbnailUpload.sendKeys("/Users/vk14/Downloads/property_images/villa/" + thumbnail);
+		addMoreImages.sendKeys("/Users/vk14/Downloads/property_images/other images/" + other_images);
+		planImageField.sendKeys("/Users/vk14/Downloads/property_images/plan/" + plan_image);
+		videoUpload.sendKeys("/Users/vk14/Downloads/" + video_file);
+	}
+	
+	/*
+	 * Upload files for office
+	 */
+	public void addFilesOffice(String thumbnail, String other_images, String plan_image, String video_file) {
+		thumbnailUpload.sendKeys("/Users/vk14/Downloads/property_images/villa/" + thumbnail);
+		addMoreImages.sendKeys("/Users/vk14/Downloads/property_images/other images/" + other_images);
+		planImageField.sendKeys("/Users/vk14/Downloads/property_images/plan/" + plan_image);
+		videoUpload.sendKeys("/Users/vk14/Downloads/" + video_file);
+	}
 
 	/*
 	 * Enter URL details
@@ -672,7 +691,7 @@ public class PropertyCreatePage extends Components {
 		videtourUrlField.sendKeys(video_tour_url);
 		youtubeUrlField.sendKeys(youtube_url);
 		waitForElementToBeClickable(brochureUpload);
-		brochureUpload.sendKeys("/Users/vk14/Downloads/" + brochure);
+		//brochureUpload.sendKeys("/Users/vk14/Downloads/" + brochure);
 
 	}
 

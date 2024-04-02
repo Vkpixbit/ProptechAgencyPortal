@@ -1,4 +1,4 @@
-package pages;
+package com.pixbit.agencyportal.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -27,6 +27,9 @@ public class PropertySpecalistCreationPage extends Components {
 	@FindBy(xpath = "//input[@id='email']")
 	public WebElement psEmail;
 	
+	@FindBy(xpath = "//select[@class='PhoneInputCountrySelect']")
+	public WebElement psSelectionDropdwon;
+	
 	@FindBy(xpath = "//input[@id='mobile']")
 	public WebElement psMobile;
 	
@@ -38,6 +41,9 @@ public class PropertySpecalistCreationPage extends Components {
 	
 	@FindBy(xpath = "//input[@name='broker_card_image']")
 	WebElement brokerImageField;
+	
+	@FindBy(xpath = "//button[text()='Done']")
+	WebElement done;
 	
 	
 	public void uploadImage(String ps_profile_photo) throws InterruptedException {
@@ -61,6 +67,19 @@ public class PropertySpecalistCreationPage extends Components {
 	public void saveAndSendPassword() throws InterruptedException {
 		driver.findElement(By.xpath("//button[.='Save & Send Password']")).click();
 		Thread.sleep(3000);
+	}
+	
+	public PropertySpecalistPage createPropertySpecalist(String ps_name,String ps_email,String ps_country_code,String ps_mobile,String ps_address) throws InterruptedException {
+		psName.sendKeys(ps_name);
+		psEmail.sendKeys(ps_email);
+		selectFromDropdown(psSelectionDropdwon, ps_country_code);
+		psMobile.sendKeys(ps_mobile);
+		psAddress.sendKeys(ps_address);
+		saveAndSendPassword();
+		Thread.sleep(2000);
+		done.click();
+		Thread.sleep(2000);
+		return new PropertySpecalistPage(driver);
 	}
 	
 }

@@ -1,4 +1,4 @@
-package pages;
+package com.pixbit.agencyportal.pages;
 
 import java.time.Duration;
 
@@ -22,7 +22,7 @@ public class HomePage extends Components {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//div[text()='Users']")
+	@FindBy(xpath = "//div[text()='User Admin']")
 	WebElement usersButton;
 
 	@FindBy(xpath = "//div[text()='Projects']")
@@ -49,7 +49,9 @@ public class HomePage extends Components {
 		org.testng.Assert.assertEquals(currentURL, expectedURL);
 	}
 
-	public UserAdminPage openUsers() throws InterruptedException {
+	public UserAdminPage openUserAdmin() throws InterruptedException {
+		Thread.sleep(2000);
+		settingsButton.click();
 		Thread.sleep(2000);
 		usersButton.click();
 		return new UserAdminPage(driver);
@@ -89,11 +91,12 @@ public class HomePage extends Components {
 			return new DeveloperListingPage(driver);		}
 	}
 
-	public void PropertySpecalistPage() throws InterruptedException {
+	public PropertySpecalistPage openPropertySpecalistPage() throws InterruptedException {
 		Thread.sleep(2000);
 		settingsButton.click();
 		Thread.sleep(2000);
 		propertySpecalistButton.click();
+		return new PropertySpecalistPage(driver);
 	}
 
 }

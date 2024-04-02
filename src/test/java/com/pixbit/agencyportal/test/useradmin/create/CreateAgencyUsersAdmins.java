@@ -1,6 +1,9 @@
-package agencyusers;
+package com.pixbit.agencyportal.test.useradmin.create;
 
 import org.testng.annotations.Test;
+
+
+
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
@@ -9,17 +12,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.DataProvider;
 
-import globalfiles.GlobalData;
 import io.cucumber.java.en.Given;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import pages.HomePage;
-import pages.UserAdminCreatePage;
-import pages.UserAdminPage;
 
-public class CreateAgencyUsersAdmins extends GlobalData {
+
+public class CreateAgencyUsersAdmins  {
 	
 	public WebDriver driver;
-	
+	/*
 	@Given("I open login page and login {String} and {String} then open UserAdmin page and click Add User Admin")
 	public void openUserAdminCreatePage(String email, String password) throws InterruptedException {
 		WebDriverManager.chromedriver().setup();
@@ -27,23 +27,19 @@ public class CreateAgencyUsersAdmins extends GlobalData {
 		driver.manage().window().maximize();
 		driver.get("http://139.59.35.179:310/");
 		HomePage HomePage=LoginPage.login(email, password);
-		UserAdminPage UserPage=HomePage.openUsers();
+		UserAdminPage UserPage=HomePage.openUserAdmin();
 		UserPage.openAddUser();
 		
 	}
 	
 	
 	@Given("^I enter (.+), (.+), (.+), (.+) and click Save & Continue$")
-	public void VerifyCreateUser_Active_NoCountryCodeChange_DeveloperUserAdmin(String name,String email,String mobile_number,String address) {
+	public void VerifyCreateUser_Active_NoCountryCodeChange_DeveloperUserAdmin(String name,String email,String mobile_number,String address) throws InterruptedException {
 		UserAdminCreatePage CreateUserPage=new UserAdminCreatePage(driver);
-		//CreateUserPage.createNewUser_Active_NoCountryCodeChange_DeveloperAdmin(name,email,mobile_number,address);
+		CreateUserPage.createNewUserAdmin_Active_NoCountryCodeChange_DeveloperAdmin(name,email,mobile_number,address);
 		
 	}
-	/*@DataProvider
-	public Object[][] userCreateData_1() throws IOException {
-		List<HashMap<String, String>>value=getJsondata("/Users/vk14/eclipse-workspace/AgencyPortal/src/test/java/data/UserDetails.json");
-		return new Object[][] {{value.get(0)}};
-	}*/
+	
 	
 	
 	
@@ -99,4 +95,5 @@ public class CreateAgencyUsersAdmins extends GlobalData {
 		List<HashMap<String, String>>value=getJsondata("/Users/vk14/eclipse-workspace/AgencyPortal/src/test/java/data/UserDetails.json");
 		return new Object[][] {{value.get(4)}};
 	}
+	*/
 }

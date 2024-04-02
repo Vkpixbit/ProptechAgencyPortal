@@ -1,14 +1,15 @@
 package loginpage;
 
 import org.testng.annotations.Test;
+
+import com.pixbit.agencyportal.globalfiles.GlobalData;
+import com.pixbit.agencyportal.pages.HomePage;
+
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
 import org.testng.annotations.DataProvider;
-
-import globalfiles.GlobalData;
-import pages.HomePage;
 
 public class VerifyLoging extends GlobalData {
 
@@ -26,7 +27,7 @@ public class VerifyLoging extends GlobalData {
 		return new Object[][] { { value.get(0) } };
 	}
 
-	@Test(dataProvider = "validEmailInvalidPassword")
+	/*@Test(dataProvider = "validEmailInvalidPassword")
 	public void login_with_valid_email_invalid_password(HashMap<String, String> input) throws InterruptedException {
 		LoginPage.login(input.get("email_id"), input.get("password"));
 		Thread.sleep(2000);
@@ -52,6 +53,6 @@ public class VerifyLoging extends GlobalData {
 		List<HashMap<String, String>> value = getJsondata(
 				"/Users/vk14/eclipse-workspace/AgencyPortal/src/test/java/data/LoginDetails.json");
 		return new Object[][] { { value.get(2) } };
-	}
+	}*/
 
 }

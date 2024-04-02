@@ -1,5 +1,6 @@
-package pages;
+package com.pixbit.agencyportal.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -26,6 +27,12 @@ public class DeveloperListingPage  {
 	public PropertyPageValidations openAddPropertyValidations() {
 		addProperty.click();
 		return new PropertyPageValidations(driver);
+	}
+	
+	public PropertyDetailsPage openPropertyDetails() throws InterruptedException {
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//tr[1]//button")).click();
+		return new PropertyDetailsPage(driver);
 	}
 
 }

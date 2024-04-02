@@ -1,12 +1,12 @@
-package developers;
+package com.pixbit.agencyportal.test.developers.property.add;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import globalfiles.GlobalData;
-import pages.DeveloperListingPage;
-import pages.HomePage;
-import pages.PropertyPageValidations;
+import com.pixbit.agencyportal.globalfiles.GlobalData;
+import com.pixbit.agencyportal.pages.DeveloperListingPage;
+import com.pixbit.agencyportal.pages.HomePage;
+import com.pixbit.agencyportal.pages.PropertyPageValidations;
 
 public class PropertyAddValidations extends GlobalData {
 

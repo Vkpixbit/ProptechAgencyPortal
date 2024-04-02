@@ -1,4 +1,4 @@
-package pages;
+package com.pixbit.agencyportal.pages;
 
 import java.util.List;
 

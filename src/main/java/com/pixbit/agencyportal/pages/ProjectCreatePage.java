@@ -1,4 +1,4 @@
-package pages;
+package com.pixbit.agencyportal.pages;
 
 import java.awt.AWTException;
 import org.openqa.selenium.By;
@@ -487,10 +487,7 @@ public class ProjectCreatePage extends Components {
 		nocUpload_2.sendKeys(noc_document);
 		underConstructionPhase_2.click();
 		paymentNameField_2_1.sendKeys(payment_name_2_1);
-		dateField_2_1_1.sendKeys(null);
-		particularField_2_1_1.sendKeys(null);
-		periodField_2_1_1.sendKeys(null);
-		bookingAmountField_2_1_1.sendKeys(null);
+
 	}
 
 	public void projectSave() throws InterruptedException {

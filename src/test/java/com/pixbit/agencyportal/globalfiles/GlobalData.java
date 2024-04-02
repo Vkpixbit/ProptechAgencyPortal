@@ -1,4 +1,4 @@
-package globalfiles;
+package com.pixbit.agencyportal.globalfiles;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -14,17 +14,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.FindBy;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
-
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.pixbit.agencyportal.pages.LoginPage;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import pages.LoginPage;
 
 public class GlobalData {
 
@@ -49,7 +45,7 @@ public class GlobalData {
 	}
 	
 	
-	@BeforeClass(alwaysRun = true)
+	@BeforeMethod(alwaysRun = true)
 	public LoginPage openAgencyPortal() throws IOException {
 		driver=initalizedriver();
 		LoginPage =new LoginPage(driver);
@@ -58,7 +54,7 @@ public class GlobalData {
 	}
 
 
-	@AfterClass(alwaysRun = true)
+	@AfterMethod(alwaysRun = true)
 	public void close() {
 		driver.close();
 	}
@@ -83,5 +79,6 @@ public class GlobalData {
 	public void clickDone() {
 		done.click();
 	}
+
 	
 }

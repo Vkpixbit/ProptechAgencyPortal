@@ -8,10 +8,10 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import globalfiles.GlobalData;
-import pages.HomePage;
-import pages.PropertySpecalistCreationPage;
-import pages.PropertySpecalistPage;
+import com.pixbit.agencyportal.globalfiles.GlobalData;
+import com.pixbit.agencyportal.pages.HomePage;
+import com.pixbit.agencyportal.pages.PropertySpecalistCreationPage;
+import com.pixbit.agencyportal.pages.PropertySpecalistPage;
 
 public class PropertySpecalistCreation extends GlobalData {
 
@@ -19,7 +19,7 @@ public class PropertySpecalistCreation extends GlobalData {
 	@BeforeClass
 	public void openPropertySpecalistPage() throws InterruptedException {
 		HomePage HomePage=LoginPage.login("vishnudas@pixbitsolutions.com","Prosper@1lE6w");
-		HomePage.PropertySpecalistPage();
+		HomePage.openPropertySpecalistPage();
 	}
 	
 	

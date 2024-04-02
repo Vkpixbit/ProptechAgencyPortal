@@ -2,8 +2,8 @@ package propertyspecalist;
 
 import org.testng.annotations.Test;
 
-import globalfiles.GlobalData;
-import pages.HomePage;
+import com.pixbit.agencyportal.globalfiles.GlobalData;
+import com.pixbit.agencyportal.pages.HomePage;
 
 public class PropertySpecalistTeam  extends GlobalData {
 
