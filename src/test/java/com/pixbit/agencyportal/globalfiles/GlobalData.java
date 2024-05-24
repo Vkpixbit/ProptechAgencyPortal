@@ -15,6 +15,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -54,9 +55,11 @@ public class GlobalData {
 	}
 
 
-	@AfterMethod(alwaysRun = true)
+	@AfterTest(alwaysRun = true)
 	public void close() {
-		driver.close();
+		if(driver != null) {
+			driver.quit();
+		}
 	}
 	
 	public void getScreenshot() {

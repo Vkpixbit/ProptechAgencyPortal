@@ -18,7 +18,7 @@ public class CreateProperty extends GlobalData {
 	/*
 	 * Property Add with Apartment with Ready and enter trakheesi details
 	 */
-	@Test(dataProvider = "apartment_ready_fill_all_fields_data")
+	@Test(dataProvider = "apartment_ready_fill_all_fields_data", groups="Developer_Property_Add")
 	public void apartment_ready_fill_all_fields(HashMap<String, String> input)
 			throws InterruptedException, AWTException {
 		HomePage HomePage = LoginPage.login(input.get("email_id"), input.get("password"));
@@ -80,7 +80,7 @@ public class CreateProperty extends GlobalData {
 	 * Adding developer Property with fall required and optional details trakheesi
 	 * yes and enter details select Ready and Villa Select rental as Yes add details
 	 */
-	@Test(dataProvider = "villa_property_ready_with_allfields")
+	@Test(dataProvider = "villa_property_ready_with_allfields", groups="Developer_Property_Add")
 	public void developer_property_adding_with_ready_villa_allfields(HashMap<String, String> input)
 			throws InterruptedException, AWTException {
 		HomePage HomePage = LoginPage.login(input.get("email_id"), input.get("password"));
@@ -138,7 +138,7 @@ public class CreateProperty extends GlobalData {
 	/*
 	 * office Property with Ready status Enter Trakheesi as Yes and Rental as Yes
 	 */
-	@Test(dataProvider = "office_property_ready_with_allfields")
+	@Test(dataProvider = "office_property_ready_with_allfields", groups="Developer_Property_Add")
 	public void developer_property_adding_with_ready_office__allfields(HashMap<String, String> input)
 			throws InterruptedException, AWTException {
 		HomePage HomePage = LoginPage.login(input.get("email_id"), input.get("password"));
@@ -200,7 +200,7 @@ public class CreateProperty extends GlobalData {
 	 * Service apartment property with underconstruction Select trakheesi Yes and
 	 * Rental as Yes,Enter details
 	 */
-	@Test(dataProvider = "serviceapartment_property_underconstruction_with_allfields")
+	@Test(dataProvider = "serviceapartment_property_underconstruction_with_allfields", groups="Developer_Property_Add")
 	public void developer_property_adding_with_underconstruction_serviceapartment_with_allfields(
 			HashMap<String, String> input) throws InterruptedException, AWTException {
 		HomePage HomePage = LoginPage.login(input.get("email_id"), input.get("password"));
@@ -261,7 +261,7 @@ public class CreateProperty extends GlobalData {
 	 * Townhouse property with underconstruction Select trakheesi Yes and Rental as
 	 * Yes,Enter details
 	 */
-	@Test(dataProvider = "townhouse_property_underconstruction_with_allfields")
+	@Test(dataProvider = "townhouse_property_underconstruction_with_allfields", groups="Developer_Property_Add")
 	public void developer_property_adding_with_underconstruction_townhouse_with_allfields(HashMap<String, String> input)
 			throws InterruptedException, AWTException {
 		HomePage HomePage = LoginPage.login(input.get("email_id"), input.get("password"));
@@ -319,7 +319,7 @@ public class CreateProperty extends GlobalData {
 	 * apartment property with underconstruction trakheesi details as no Rental as
 	 * No
 	 */
-	@Test(dataProvider = "apartment_property_underconstruction_without_trakheesi_rental")
+	@Test(dataProvider = "apartment_property_underconstruction_without_trakheesi_rental", groups="Developer_Property_Add")
 	public void developer_property_adding_apartment_underconstruction_without_trakheesi_and_rent_fillotherfields(
 			HashMap<String, String> input) throws InterruptedException, AWTException {
 		HomePage HomePage = LoginPage.login(input.get("email_id"), input.get("password"));
@@ -378,7 +378,7 @@ public class CreateProperty extends GlobalData {
 	/*
 	 * villa property with underconstruction Trakheesi as No
 	 */
-	@Test(dataProvider = "villa_property_underconstruction_without_rental_rental")
+	@Test(dataProvider = "villa_property_underconstruction_without_rental_rental", groups="Developer_Property_Add")
 	public void developer_property_adding_villa_underconstruction_without_trakheesi_otherallfields(
 			HashMap<String, String> input) throws InterruptedException, AWTException {
 		HomePage HomePage = LoginPage.login(input.get("email_id"), input.get("password"));
@@ -434,7 +434,7 @@ public class CreateProperty extends GlobalData {
 	/*
 	 * Office property with Ready status Trakheesi as No Only Add required fields
 	 */
-	@Test(dataProvider = "office_property_ready_without_trakheesi")
+	@Test(dataProvider = "office_property_ready_without_trakheesi", groups="Developer_Property_Add")
 	public void developer_property_adding_office_ready_without_trakheesi_only_requiredfields(
 			HashMap<String, String> input) throws InterruptedException, AWTException {
 		HomePage HomePage = LoginPage.login(input.get("email_id"), input.get("password"));
@@ -492,7 +492,7 @@ public class CreateProperty extends GlobalData {
 	 * property with ready status Add trakheesi details Commerical property Not
 	 * furnished Bedroom,Bathroom,Kitchen,balcony - 1
 	 */
-	@Test(dataProvider = "property_with_ready_commerical_notfurnished")
+	@Test(dataProvider = "property_with_ready_commerical_notfurnished", groups="Developer_Property_Add")
 	public void developer_property_adding_ready_with_trakheesi_and_autofill(HashMap<String, String> input)
 			throws InterruptedException {
 		HomePage HomePage = LoginPage.login(input.get("email_id"), input.get("password"));
@@ -517,7 +517,7 @@ public class CreateProperty extends GlobalData {
 	 * property with underconstruction Add trakheesi details Residential category
 	 * Semi Furnished Update Counts
 	 */
-	@Test(dataProvider = "property_with_underconstruction_residential_semifurnished")
+	@Test(dataProvider = "property_with_underconstruction_residential_semifurnished", groups="Developer_Property_Add")
 	public void developer_property_adding_underconstruction_with_trakheesi_and_updatecount_autofill(
 			HashMap<String, String> input) throws InterruptedException {
 		HomePage HomePage = LoginPage.login(input.get("email_id"), input.get("password"));
@@ -547,7 +547,7 @@ public class CreateProperty extends GlobalData {
 	 * property with office and ready status and Commercial category White goods
 	 * Update all count
 	 */
-	@Test(dataProvider = "property_with_office_underconstruction_commericial_whitegoods")
+	@Test(dataProvider = "property_with_office_underconstruction_commericial_whitegoods", groups="Developer_Property_Add")
 	public void developer_property_adding_ready_with_trakheesi(HashMap<String, String> input)
 			throws InterruptedException {
 		HomePage HomePage = LoginPage.login(input.get("email_id"), input.get("password"));
@@ -578,7 +578,7 @@ public class CreateProperty extends GlobalData {
 	 * developer property with out trakheesi and other auto selected fields office
 	 * property underconstruction status
 	 */
-	@Test(dataProvider = "property_add_without_trakheesi_office")
+	@Test(dataProvider = "property_add_without_trakheesi_office", groups="Developer_Property_Add")
 	public void developer_property_adding_office_without_trakheesi_and_autofill_data(HashMap<String, String> input)
 			throws InterruptedException {
 		HomePage HomePage = LoginPage.login(input.get("email_id"), input.get("password"));
@@ -604,7 +604,7 @@ public class CreateProperty extends GlobalData {
 	 * developer property with out trakheesi and other auto selected fields villa
 	 * property ready status
 	 */
-	@Test
+	@Test(dataProvider = "property_add_without_trakheesi_villa", groups="Developer_Property_Add")
 	public void developer_property_adding_villa_without_trakheesi(HashMap<String, String> input)
 			throws InterruptedException {
 		HomePage HomePage = LoginPage.login(input.get("email_id"), input.get("password"));

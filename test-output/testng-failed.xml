@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="LoginTest(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.pixbit.agencyportal.test.developers.property.add.CreateProperty">
+      <class name="com.pixbit.agencyportal.enquires.MarkAsSold">
         <methods>
+          <include name="mark_as_sold_developer_underconstruction" invocation-numbers="0"/>
           <include name="close"/>
           <include name="openAgencyPortal"/>
-          <include name="developer_property_adding_with_ready_office__allfields" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.pixbit.agencyportal.test.developers.property.add.CreateProperty -->
+      </class> <!-- com.pixbit.agencyportal.enquires.MarkAsSold -->
     </classes>
-  </test> <!-- LoginTest(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

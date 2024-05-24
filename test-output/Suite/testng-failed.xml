@@ -7,7 +7,7 @@
         <methods>
           <include name="close"/>
           <include name="openAgencyPortal"/>
-          <include name="developer_property_adding_with_ready_office__allfields" invocation-numbers="0"/>
+          <include name="apartment_ready_fill_all_fields" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.pixbit.agencyportal.test.developers.property.add.CreateProperty -->
     </classes>

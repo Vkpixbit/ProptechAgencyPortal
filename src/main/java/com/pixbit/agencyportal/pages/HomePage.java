@@ -42,6 +42,13 @@ public class HomePage extends Components {
 
 	@FindBy(xpath = "//div[text()='Property Specialist']")
 	WebElement propertySpecalistButton;
+	
+	@FindBy(xpath = "//div[text()='Secondary']")
+	WebElement secondary;
+	
+	@FindBy(xpath = "//div[text()='Enquiries']")
+	WebElement Enquiries;
+	
 
 	public void loginVerification() {
 		String currentURL = driver.getCurrentUrl();
@@ -98,5 +105,24 @@ public class HomePage extends Components {
 		propertySpecalistButton.click();
 		return new PropertySpecalistPage(driver);
 	}
+	
+	public SecondaryEnqueryPage openSecondaryEnquery() throws InterruptedException {
+		Thread.sleep(2000);
+		secondary.click();
+		Thread.sleep(2000);
+		Enquiries.click();
+		return new SecondaryEnqueryPage(driver);
+	}
+	
+	public DeveloperEnqueryPage developerEnqueryPage() throws InterruptedException {
+		Thread.sleep(3000);
+		developer.click();
+		Thread.sleep(2000);
+		Enquiries.click();
+		Thread.sleep(2000);
+		//System.out.println("Test");
+		return new DeveloperEnqueryPage(driver);
+	}
+		
 
 }

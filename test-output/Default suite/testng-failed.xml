@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.pixbit.agencyportal.smoketesting.SmokeTestingCases">
+      <class name="com.pixbit.agencyportal.enquires.MarkAsSold">
         <methods>
+          <include name="mark_as_sold_developer_underconstruction" invocation-numbers="0"/>
           <include name="close"/>
           <include name="openAgencyPortal"/>
-          <include name="change_sub_status_property" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.pixbit.agencyportal.smoketesting.SmokeTestingCases -->
+      </class> <!-- com.pixbit.agencyportal.enquires.MarkAsSold -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

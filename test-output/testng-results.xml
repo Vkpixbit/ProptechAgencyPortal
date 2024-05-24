@@ -2,31 +2,31 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-04-02T09:56:12 IST" name="Suite" finished-at="2024-04-02T09:59:09 IST" duration-ms="176710">
+  <suite started-at="2024-05-23T09:19:26 IST" name="Default suite" finished-at="2024-05-23T09:20:39 IST" duration-ms="72987">
     <groups>
     </groups>
-    <test started-at="2024-04-02T09:56:12 IST" name="LoginTest" finished-at="2024-04-02T09:59:09 IST" duration-ms="176710">
-      <class name="com.pixbit.agencyportal.test.developers.property.add.CreateProperty">
-        <test-method is-config="true" signature="openAgencyPortal()[pri:0, instance:com.pixbit.agencyportal.test.developers.property.add.CreateProperty@79e4c792]" started-at="2024-04-02T09:56:12 IST" name="openAgencyPortal" finished-at="2024-04-02T09:56:21 IST" duration-ms="8555" status="PASS">
+    <test started-at="2024-05-23T09:19:26 IST" name="Default test" finished-at="2024-05-23T09:20:39 IST" duration-ms="72987">
+      <class name="com.pixbit.agencyportal.enquires.MarkAsSold">
+        <test-method is-config="true" signature="openAgencyPortal()[pri:0, instance:com.pixbit.agencyportal.enquires.MarkAsSold@5e2c3d18]" started-at="2024-05-23T09:19:26 IST" name="openAgencyPortal" finished-at="2024-05-23T09:19:36 IST" duration-ms="10217" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openAgencyPortal -->
-        <test-method signature="developer_property_adding_with_ready_office__allfields(java.util.HashMap)[pri:0, instance:com.pixbit.agencyportal.test.developers.property.add.CreateProperty@79e4c792]" started-at="2024-04-02T09:56:21 IST" name="developer_property_adding_with_ready_office__allfields" data-provider="office_property_ready_with_allfields" finished-at="2024-04-02T09:59:09 IST" duration-ms="167543" status="PASS">
+        <test-method signature="mark_as_sold_developer_underconstruction(java.util.HashMap)[pri:0, instance:com.pixbit.agencyportal.enquires.MarkAsSold@5e2c3d18]" started-at="2024-05-23T09:19:36 IST" name="mark_as_sold_developer_underconstruction" data-provider="developer_underconstruction_mark_as_sold" finished-at="2024-05-23T09:20:39 IST" duration-ms="62328" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{contract_amount=760000, video_tour_url=http://video-tour.com, balcony_count=4, amenities_4=Shared Gym, other_images=download (1).jpg, amenities_1=Water supply, amenities_3=Basement Parking, amenities_2=Concierge services, suite_area_sqm=495549.54, password=Qapixbit@14, unit_number=8, plan_image=download (2).png, kitchen_pantry_count=5, rented_until=15/09/2023, bathroom_count=4, payment_plan=Registration Plan, property_project=Tiger Properties For Home, attraction_2=Blossom Downtown Nursery Dubai, attraction_3=DUBAISHOPPERS.COM, thumbnail=images (3).jpg, attraction_1=RIPANI, price_from=956000, attraction_4=SEGA Republic, property_phase=Residency Dubai City, parking_count=3, furnishing_status=Semi Furnished, trakheesi_number=123434, title_deed_document=Aspect Tower 1003 Title Deed.pdf, virtual_tour_url=http://virtual.com, common_area_sqm=4384.5, rera_transaction_number=A-64546, youtube_url=http://youtube.com, email_id=neethu@pixbitsolutions.com, dewa_number=6985DS/64, ps_team_name=QA PS Team 24, bedroom_cabin_count=7, description=This property should be very nice property,and this is very good, map_search=Dubai, selected_map=Dubai Mall - Dubai - United Arab Emirates, video_file=Video_20230928_173908_680_1.mp4, title=Sapphire Town Real Estate, property_category=Commercial, rented_at=10/05/2019, listing_price=995000, age_of_property=5, total_area_sqft=4434.5, brochure=proposal-document.pdf, builtup_area_sqft=845.64, price_to=2100000, mainteance_fee=5400, balcony_area_sqm=584.4, sub_location=Natural History Museum, emirate=Sharjah, location=Sharjah Desert Park}]]>
+                <![CDATA[{email_id=qa.pixbitsolutions@gmail.com, password=Qapixbit@14, enqueried_person=yatin}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- developer_property_adding_with_ready_office__allfields -->
-        <test-method is-config="true" signature="close()[pri:0, instance:com.pixbit.agencyportal.test.developers.property.add.CreateProperty@79e4c792]" started-at="2024-04-02T09:59:09 IST" name="close" finished-at="2024-04-02T09:59:09 IST" duration-ms="297" status="PASS">
+        </test-method> <!-- mark_as_sold_developer_underconstruction -->
+        <test-method is-config="true" signature="close()[pri:0, instance:com.pixbit.agencyportal.enquires.MarkAsSold@5e2c3d18]" started-at="2024-05-23T09:20:39 IST" name="close" finished-at="2024-05-23T09:20:39 IST" duration-ms="193" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close -->
-      </class> <!-- com.pixbit.agencyportal.test.developers.property.add.CreateProperty -->
-    </test> <!-- LoginTest -->
-  </suite> <!-- Suite -->
+      </class> <!-- com.pixbit.agencyportal.enquires.MarkAsSold -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

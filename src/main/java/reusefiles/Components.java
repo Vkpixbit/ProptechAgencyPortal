@@ -20,6 +20,9 @@ public class Components {
 		PageFactory.initElements(driver, this);
 	}
 	
+	@FindBy(xpath = "//button[@type='submit']")
+	WebElement nextClick;
+	
 	@FindBy(xpath = "//button[text()='Save']")
 	public  WebElement save;
 	
@@ -33,6 +36,13 @@ public class Components {
 	WebElement saveSendPassword;
 	
 	
+	
+
+	public void clickNext() throws InterruptedException {
+		Thread.sleep(2000);
+		nextClick.click();
+		Thread.sleep(10000);
+	}
 	
 	public void scrollUpToText(String text) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
