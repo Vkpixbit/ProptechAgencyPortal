@@ -35,10 +35,24 @@ public class DeveloperEnqueryPage extends Components {
 
 	// "+enqueried_person+"
 
-	public void openEnqueryDetailsPage(String enqueried_person) throws InterruptedException {
-		Thread.sleep(3000);
-		driver.findElement(By.xpath("(//tr//td[text()='"+enqueried_person+"'])[1]/following-sibling::td[8]")).click();
-		Thread.sleep(4000);	}
+	public void openEnquiryDetailsPage(String enquiredPerson) throws InterruptedException {
+	    Thread.sleep(3000);
+
+	    List<WebElement> rows = driver.findElements(By.xpath("//tr[td[text()='" + enquiredPerson + "']]"));
+	    //System.out.println(rows.size());
+
+	    for (WebElement row : rows) {
+	       
+	        WebElement statusElement = row.findElement(By.xpath("td[8]")); 
+	        String statusText = statusElement.getText();
+	        if (statusText.equalsIgnoreCase("Pending")) {
+	            row.findElement(By.xpath("td[9]")).click();
+	            Thread.sleep(3000);
+	            //break;
+	        }
+	        //System.out.println("Item Not Get!");
+	    }
+	}
 
 	public void statusChange(List<String> statuses) throws InterruptedException {
 		for (String status : statuses) {
@@ -78,7 +92,7 @@ public class DeveloperEnqueryPage extends Components {
 		statusChange(statuses);
 	}
 	
-	public void markAsSOld() {
+	public MarkAsSoldPage markAsSOld() {
 		markasSoldButton.click();
 		return new MarkAsSoldPage(driver);
 	}

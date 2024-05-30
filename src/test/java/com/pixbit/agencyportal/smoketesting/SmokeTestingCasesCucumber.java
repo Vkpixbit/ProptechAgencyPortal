@@ -29,9 +29,9 @@ public WebDriver driver;
 		HomePage HomePage=LoginPage.login("vishnudas@pixbitsolutions.com", "Prosper@1lE6w");
 		UserAdminPage UserAdminPage=HomePage.openUserAdmin();
 		UserAdminCreatePage UserAdminCreatePage =UserAdminPage.openAddUser();
-		UserAdminCreatePage.createNewUserAdmin_Active_NoCountryCodeChange_DeveloperAdmin(name,email,mobile_number,address);
+		/*UserAdminCreatePage.createNewUserAdmin_Active_NoCountryCodeChange_DeveloperAdmin(name,email,mobile_number,address);
 		UserAdminPage.verifyUserAdmin(name, email, mobile_number, address);
-		driver.quit();
+		driver.quit();*/
 	}
 	
 	

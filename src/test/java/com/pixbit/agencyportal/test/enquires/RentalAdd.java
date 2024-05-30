@@ -1,4 +1,4 @@
-package com.pixbit.agencyportal.enquires;
+package com.pixbit.agencyportal.test.enquires;
 
 import java.io.IOException;
 import java.util.HashMap;

@@ -218,7 +218,7 @@ public class PropertyCreatePage extends Components {
 	 */
 	public void selectProject(String property_project) throws InterruptedException {
 		projectDropdown.click();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		driver.findElement(By.xpath("//div[text()='" + property_project + "']")).click();
 	}
 
@@ -327,7 +327,7 @@ public class PropertyCreatePage extends Components {
 	 */
 	public void townhouse() throws InterruptedException {
 		propertyTypeDropdwon.click();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		WebElement requiredPropertyType = driver.findElement(By.xpath("//div[text()='Townhouse']"));
 		requiredPropertyType.click();
 	}
@@ -337,7 +337,7 @@ public class PropertyCreatePage extends Components {
 	 */
 	public void villa() throws InterruptedException {
 		propertyTypeDropdwon.click();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		WebElement requiredPropertyType = driver.findElement(By.xpath("//div[text()='Villa']"));
 		requiredPropertyType.click();
 	}
@@ -347,7 +347,7 @@ public class PropertyCreatePage extends Components {
 	 */
 	public void office() throws InterruptedException {
 		propertyTypeDropdwon.click();
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		WebElement requiredPropertyType = driver.findElement(By.xpath("//div[text()='Office']"));
 		requiredPropertyType.click();
 	}
@@ -357,7 +357,7 @@ public class PropertyCreatePage extends Components {
 	 */
 	public void serviceApartment() throws InterruptedException {
 		propertyTypeDropdwon.click();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		WebElement requiredPropertyType = driver.findElement(By.xpath("//div[text()='Service Apartment']"));
 		requiredPropertyType.click();
 	}

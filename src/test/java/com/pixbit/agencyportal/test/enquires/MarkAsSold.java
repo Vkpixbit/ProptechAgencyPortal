@@ -1,4 +1,4 @@
-package com.pixbit.agencyportal.enquires;
+package com.pixbit.agencyportal.test.enquires;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -15,7 +15,7 @@ public class MarkAsSold extends GlobalData {
 	public void mark_as_sold_developer_underconstruction(HashMap<String, String>input) throws InterruptedException {
 		HomePage HomePage = LoginPage.login(input.get("email_id"), input.get("password"));
 		DeveloperEnqueryPage DeveloperEnqueryPage = HomePage.developerEnqueryPage();
-		DeveloperEnqueryPage.openEnqueryDetailsPage(input.get("enqueried_person"));
+		DeveloperEnqueryPage.openEnquiryDetailsPage(input.get("enqueried_person"));
 		DeveloperEnqueryPage.changeStatusComplete();
 		
 	}
@@ -31,7 +31,7 @@ public class MarkAsSold extends GlobalData {
 	public void mark_as_sold_developer_ready(HashMap<String, String>input) throws InterruptedException {
 		HomePage HomePage = LoginPage.login(input.get("email_id"), input.get("password"));
 		DeveloperEnqueryPage DeveloperEnqueryPage = HomePage.developerEnqueryPage();
-		DeveloperEnqueryPage.openEnqueryDetailsPage(input.get("enqueried_person"));
+		DeveloperEnqueryPage.openEnquiryDetailsPage(input.get("enqueried_person"));
 		DeveloperEnqueryPage.changeStatusComplete();
 	}
 	

@@ -55,7 +55,7 @@ public class GlobalData {
 	}
 
 
-	@AfterTest(alwaysRun = true)
+	@AfterMethod(alwaysRun = true)
 	public void close() {
 		if(driver != null) {
 			driver.quit();
