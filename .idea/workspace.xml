@@ -5,26 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="67ce9d4e-e8b7-4821-9283-787b61c7f364" name="Changes" comment="Add Eclipse project files">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pixbit/agencyportal/pages/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pixbit/agencyportal/pages/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/reusefiles/Components.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/reusefiles/Components.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/reports/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pixbit/agencyportal/pages/UserAdminCreatePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pixbit/agencyportal/pages/UserAdminCreatePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/pixbit/agencyportal/developer/project/data/ProjectDetails_1.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/pixbit/agencyportal/developer/project/data/ProjectDetails_1.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/pixbit/agencyportal/developer/property/data/property_data_with_all_fields.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/pixbit/agencyportal/developer/property/data/property_data_with_all_fields.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/pixbit/agencyportal/globalfiles/GlobalData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/pixbit/agencyportal/globalfiles/GlobalData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/maven/Prosper/AgencyPortal/pom.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/maven/Prosper/AgencyPortal/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/reusefiles/Components.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/reusefiles/Components.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/pixbit/agencyportal/test/developers/property/add/CreateProperty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/pixbit/agencyportal/test/developers/property/add/CreateProperty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/pixbit/agencyportal/test/useradmin/create/CreateAgencyUsersAdmins.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/pixbit/agencyportal/test/useradmin/create/CreateAgencyUsersAdmins.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/cucumber/SmokeTesting.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/cucumber/TestNGTestRunner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/project/CreateProject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/project/CreateProject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/propertyspecalist/PropertySpecalistCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/pixbit/agencyporta/test/ps/PropertySpecalistCreation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/propertyspecalist/PropertySpecalistTeam.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/pixbit/agencyporta/test/ps/PropertySpecalistTeam.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ps_creation_data/ps_creation_required_field.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/pixbit/agencyportal/ps/data/ps_creation_required_field.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ps_creation_data/ps_creation_with_all_details.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/pixbit/agencyportal/ps/data/ps_creation_with_all_details.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/maven/Prosper/AgencyPortal/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/maven/Prosper/AgencyPortal/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/maven/Prosper/AgencyPortal/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/maven/Prosper/AgencyPortal/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/project/CreateProject.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/project/CreateProject.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-output/Default suite/Default test.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/Default suite/Default test.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-output/Default suite/Default test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/Default suite/Default test.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-output/Default suite/testng-failed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/Default suite/testng-failed.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/Suite/LoginTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/Suite/LoginTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/Suite/LoginTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/Suite/LoginTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test-output/Suite/testng-failed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/Suite/testng-failed.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-output/emailable-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/emailable-report.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-output/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-output/junitreports/TEST-com.pixbit.agencyportal.test.developers.property.add.CreateProperty.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-com.pixbit.agencyportal.test.developers.property.add.CreateProperty.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/junitreports/TEST-cucumber.TestNGTestRunner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-cucumber.TestNGTestRunner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/junitreports/TEST-project.CreateProject.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-project.CreateProject.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-output/junitreports/TEST-propertyspecalist.PropertySpecalistCreation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/junitreports/TEST-propertyspecalist.PropertySpecalistCreation.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-output/testng-failed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/testng-failed.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-output/testng-results.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test-output/testng-results.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test-suite/PropertyCreation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test-suite/PropertyCreation.xml" afterDir="false" />

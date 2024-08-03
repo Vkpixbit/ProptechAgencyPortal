@@ -267,7 +267,7 @@ public class PropertyCreatePage extends Components {
 			}
 		}
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("(//button[text()='Save'])[2]")).click();
+		driver.findElement(By.xpath("(//div[text()='Save'])[2]")).click();
 	}
 
 	/*
@@ -404,10 +404,10 @@ public class PropertyCreatePage extends Components {
 		mapOpenClick.click();
 		Thread.sleep(2000);
 		mapSearchField.sendKeys(map_search);
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		driver.findElement(By.xpath("//span[text()='" + selected_map + "']")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("(//button[text()='Save'])[2]")).click();
+		driver.findElement(By.xpath("(//div[text()='Save'])[2]")).click();
 	}
 
 	/*
@@ -538,7 +538,7 @@ public class PropertyCreatePage extends Components {
 			}
 		}
 		Thread.sleep(2000);
-		driver.findElement(By.xpath("(//button[@type='submit'])[2]")).click();
+		driver.findElement(By.xpath("(//div[text()='Save'])[2]")).click();
 	}
 
 	/*
@@ -592,10 +592,11 @@ public class PropertyCreatePage extends Components {
 		WebElement selectedPaymentPlan = driver.findElement(By.xpath("//button[contains(.,'" + payment_plan + "')]"));
 		selectedPaymentPlan.click();
 		Thread.sleep(2000);
-		for (WebElement plancheck : listOfCheckbox) {
+		if(!listOfCheckbox.isEmpty())
+			for (WebElement plancheck : listOfCheckbox) {
 			if (plancheck.isDisplayed()) {
 				plancheck.click();
-			}
+				}
 		}
 		clickDone();
 	}

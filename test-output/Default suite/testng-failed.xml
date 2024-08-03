@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.pixbit.agencyportal.test.enquires.MarkAsSold">
+      <class name="project.CreateProject">
         <methods>
           <include name="close"/>
           <include name="openAgencyPortal"/>
-          <include name="mark_as_sold_developer_underconstruction" invocation-numbers="0"/>
+          <include name="singlePhaseReadyNoPosthandover_1" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.pixbit.agencyportal.test.enquires.MarkAsSold -->
+      </class> <!-- project.CreateProject -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

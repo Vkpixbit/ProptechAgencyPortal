@@ -282,6 +282,7 @@ public class ProjectCreatePage extends Components {
 		driver.findElement(By.id("0.0")).click();
 		Thread.sleep(2000);
 		clickSave();
+		System.out.println("Project saved correctly !");
 		return new ProjectPage(driver);
 	}
 

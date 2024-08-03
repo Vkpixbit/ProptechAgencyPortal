@@ -18,8 +18,8 @@ public class CreateProperty extends GlobalData {
 	/*
 	 * Property Add with Apartment with Ready and enter trakheesi details
 	 */
-	@Test(dataProvider = "apartment_ready_fill_all_fields_data", groups="Developer_Property_Add",enabled = false)
-	public void apartment_ready_fill_all_fields(HashMap<String, String> input)
+	@Test(dataProvider = "apartmentReadyFillAllFieldsData", groups="Developer_Property_Add",enabled = true)
+	public void apartmentReadyFillAllFields(HashMap<String, String> input)
 			throws InterruptedException, AWTException {
 		HomePage HomePage = LoginPage.login(input.get("email_id"), input.get("password"));
 		DeveloperListingPage DeveloperListingPage = HomePage.openDeveloperListingPage();
@@ -70,7 +70,7 @@ public class CreateProperty extends GlobalData {
 	}
 
 	@DataProvider
-	public Object[][] apartment_ready_fill_all_fields_data() throws IOException {
+	public Object[][] apartmentReadyFillAllFieldsData() throws IOException {
 		List<HashMap<String, String>> value = getJsondata(System.getProperty("user.dir")
 				+ "/src/test/java/com/pixbit/agencyportal/developer/property/data/property_data_with_all_fields.json");
 		return new Object[][] { { value.get(0) } };
@@ -80,7 +80,7 @@ public class CreateProperty extends GlobalData {
 	 * Adding developer Property with fall required and optional details trakheesi
 	 * yes and enter details select Ready and Villa Select rental as Yes add details
 	 */
-	@Test(dataProvider = "villa_property_ready_with_allfields", groups="Developer_Property_Add",enabled = false)
+	@Test(dataProvider = "villa_property_ready_with_allfields", groups="Developer_Property_Add",enabled = true)
 	public void developer_property_adding_with_ready_villa_allfields(HashMap<String, String> input)
 			throws InterruptedException, AWTException {
 		HomePage HomePage = LoginPage.login(input.get("email_id"), input.get("password"));
@@ -200,7 +200,7 @@ public class CreateProperty extends GlobalData {
 	 * Service apartment property with underconstruction Select trakheesi Yes and
 	 * Rental as Yes,Enter details
 	 */
-	@Test(dataProvider = "serviceapartment_property_underconstruction_with_allfields", groups="Developer_Property_Add",enabled = false)
+	@Test(dataProvider = "serviceapartment_property_underconstruction_with_allfields", groups="Developer_Property_Add",enabled = true)
 	public void developer_property_adding_with_underconstruction_serviceapartment_with_allfields(
 			HashMap<String, String> input) throws InterruptedException, AWTException {
 		HomePage HomePage = LoginPage.login(input.get("email_id"), input.get("password"));
@@ -261,7 +261,7 @@ public class CreateProperty extends GlobalData {
 	 * Townhouse property with underconstruction Select trakheesi Yes and Rental as
 	 * Yes,Enter details
 	 */
-	@Test(dataProvider = "townhouse_property_underconstruction_with_allfields", groups="Developer_Property_Add",enabled = false)
+	@Test(dataProvider = "townhouse_property_underconstruction_with_allfields", groups="Developer_Property_Add",enabled = true)
 	public void developer_property_adding_with_underconstruction_townhouse_with_allfields(HashMap<String, String> input)
 			throws InterruptedException, AWTException {
 		HomePage HomePage = LoginPage.login(input.get("email_id"), input.get("password"));
@@ -319,7 +319,7 @@ public class CreateProperty extends GlobalData {
 	 * apartment property with underconstruction trakheesi details as no Rental as
 	 * No
 	 */
-	@Test(dataProvider = "apartment_property_underconstruction_without_trakheesi_rental", groups="Developer_Property_Add",enabled = false)
+	@Test(dataProvider = "apartment_property_underconstruction_without_trakheesi_rental", groups="Developer_Property_Add",enabled = true)
 	public void developer_property_adding_apartment_underconstruction_without_trakheesi_and_rent_fillotherfields(
 			HashMap<String, String> input) throws InterruptedException, AWTException {
 		HomePage HomePage = LoginPage.login(input.get("email_id"), input.get("password"));

@@ -3,13 +3,13 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="LoginTest(failed)">
     <classes>
-      <class name="com.pixbit.agencyportal.test.developers.property.add.CreateProperty">
+      <class name="project.CreateProject">
         <methods>
           <include name="close"/>
           <include name="openAgencyPortal"/>
-          <include name="apartment_ready_fill_all_fields" invocation-numbers="0"/>
+          <include name="singlePhaseReadyYesPosthandover_1" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.pixbit.agencyportal.test.developers.property.add.CreateProperty -->
+      </class> <!-- project.CreateProject -->
     </classes>
   </test> <!-- LoginTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->

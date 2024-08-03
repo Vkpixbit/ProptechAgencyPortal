@@ -2,31 +2,34 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-05-28T12:24:47 IST" name="Default suite" finished-at="2024-05-28T12:26:06 IST" duration-ms="78557">
+  <suite started-at="2024-07-23T16:03:30 IST" name="YourTestSuite" finished-at="2024-07-23T16:07:26 IST" duration-ms="235775">
     <groups>
+      <group name="Developer_Property_Add">
+        <method signature="CreateProperty.apartmentReadyFillAllFields(java.util.HashMap)[pri:0, instance:com.pixbit.agencyportal.test.developers.property.add.CreateProperty@42bc14c1]" name="apartmentReadyFillAllFields" class="com.pixbit.agencyportal.test.developers.property.add.CreateProperty"/>
+      </group> <!-- Developer_Property_Add -->
     </groups>
-    <test started-at="2024-05-28T12:24:47 IST" name="Default test" finished-at="2024-05-28T12:26:06 IST" duration-ms="78557">
-      <class name="com.pixbit.agencyportal.test.enquires.MarkAsSold">
-        <test-method is-config="true" signature="openAgencyPortal()[pri:0, instance:com.pixbit.agencyportal.test.enquires.MarkAsSold@3b0fe47a]" started-at="2024-05-28T12:24:48 IST" name="openAgencyPortal" finished-at="2024-05-28T12:24:57 IST" duration-ms="9764" status="PASS">
+    <test started-at="2024-07-23T16:03:30 IST" name="YourTest" finished-at="2024-07-23T16:07:26 IST" duration-ms="235775">
+      <class name="com.pixbit.agencyportal.test.developers.property.add.CreateProperty">
+        <test-method is-config="true" signature="openAgencyPortal()[pri:0, instance:com.pixbit.agencyportal.test.developers.property.add.CreateProperty@42bc14c1]" started-at="2024-07-23T16:03:31 IST" name="openAgencyPortal" finished-at="2024-07-23T16:03:46 IST" duration-ms="15234" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openAgencyPortal -->
-        <test-method signature="mark_as_sold_developer_underconstruction(java.util.HashMap)[pri:0, instance:com.pixbit.agencyportal.test.enquires.MarkAsSold@3b0fe47a]" started-at="2024-05-28T12:24:57 IST" name="mark_as_sold_developer_underconstruction" data-provider="developer_underconstruction_mark_as_sold" finished-at="2024-05-28T12:26:06 IST" duration-ms="68168" status="PASS">
+        <test-method signature="apartmentReadyFillAllFields(java.util.HashMap)[pri:0, instance:com.pixbit.agencyportal.test.developers.property.add.CreateProperty@42bc14c1]" started-at="2024-07-23T16:03:46 IST" name="apartmentReadyFillAllFields" data-provider="apartmentReadyFillAllFieldsData" finished-at="2024-07-23T16:07:25 IST" duration-ms="219300" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{email_id=qa.pixbitsolutions@gmail.com, password=Qapixbit@14, enqueried_person=rijun}]]>
+                <![CDATA[{contract_amount=754500, video_tour_url=http://video-tour.com, balcony_count=4, amenities_4=Shared Gym, other_images=download (1).jpg, amenities_1=Water supply, amenities_3=Basement Parking, amenities_2=24-hour Maintenance, suite_area_sqm=730.54, password=Qapixbit@14, unit_number=10, plan_image=download (2).png, kitchen_pantry_count=5, rented_until=15/09/2023, bathroom_count=1, payment_plan=Registration Payment, property_project=Prop Residential Capital, attraction_2=Cabana, attraction_3=Asado Restaurant, thumbnail=images (8).jpg, attraction_1=Atmosphere Burj Khalifa, price_from=808000, attraction_4=SEGA Republic, property_phase=The Rise, Fall, parking_count=3, furnishing_status=Furnished, trakheesi_number=TR-1243-1, title_deed_document=Al Majara 606 New TD.pdf, virtual_tour_url=http://virtual.com, common_area_sqm=184.5, rera_transaction_number=RERA-34341, youtube_url=http://youtube.com, email_id=asheek@pixbitsolutions.com, dewa_number=6985DS/64, ps_team_name=Secure Team, bedroom_cabin_count=9, description=This property should be very nice property,and this is very good, map_search=Dubai, selected_map=Dubai Mall - Dubai - United Arab Emirates, video_file=Video_20230928_173908_680_1.mp4, title=Distinguished Real Estate, property_category=Commercial, rented_at=10/05/2019, listing_price=9985000, age_of_property=1, total_area_sqft=993.5, brochure=proposal-document.pdf, builtup_area_sqft=1392.33, price_to=1230000, mainteance_fee=5000, balcony_area_sqm=1284.4, sub_location=Ras Al-Khaimah, emirate=Dubai, location=DUBAI MALL}]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- mark_as_sold_developer_underconstruction -->
-        <test-method is-config="true" signature="close()[pri:0, instance:com.pixbit.agencyportal.test.enquires.MarkAsSold@3b0fe47a]" started-at="2024-05-28T12:26:06 IST" name="close" finished-at="2024-05-28T12:26:06 IST" duration-ms="226" status="PASS">
+        </test-method> <!-- apartmentReadyFillAllFields -->
+        <test-method is-config="true" signature="close()[pri:0, instance:com.pixbit.agencyportal.test.developers.property.add.CreateProperty@42bc14c1]" started-at="2024-07-23T16:07:25 IST" name="close" finished-at="2024-07-23T16:07:26 IST" duration-ms="838" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- close -->
-      </class> <!-- com.pixbit.agencyportal.test.enquires.MarkAsSold -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- com.pixbit.agencyportal.test.developers.property.add.CreateProperty -->
+    </test> <!-- YourTest -->
+  </suite> <!-- YourTestSuite -->
 </testng-results>

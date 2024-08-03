@@ -20,7 +20,7 @@ public class LoginPage {
 	@FindBy(id = "password")
 	WebElement passwordField;
 
-	@FindBy(xpath = "//button[text()='Sign in']")
+	@FindBy(xpath = "//div[text()='Sign in']")
 	WebElement signInButton;
 
 	@FindBy(xpath = "//div[text()='invalid password']")
@@ -30,7 +30,7 @@ public class LoginPage {
 	WebElement emailError;
 
 	public void openLink() {
-		driver.get("http://prosper.agency.pixbit.in/login");
+		driver.get("http://3.110.125.197:82/login");
 	}
 
 	public HomePage login(String email_id, String password) throws InterruptedException {

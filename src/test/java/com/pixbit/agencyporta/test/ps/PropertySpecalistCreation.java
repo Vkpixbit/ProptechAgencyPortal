@@ -1,24 +1,28 @@
-package propertyspecalist;
+package com.pixbit.agencyporta.test.ps;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.pixbit.agencyportal.globalfiles.GlobalData;
 import com.pixbit.agencyportal.pages.HomePage;
+import com.pixbit.agencyportal.pages.LoginPage;
 import com.pixbit.agencyportal.pages.PropertySpecalistCreationPage;
 import com.pixbit.agencyportal.pages.PropertySpecalistPage;
 
 public class PropertySpecalistCreation extends GlobalData {
-
 	
-	@BeforeClass
+	
+	
+	@BeforeMethod
 	public void openPropertySpecalistPage() throws InterruptedException {
-		HomePage HomePage=LoginPage.login("vishnudas@pixbitsolutions.com","Prosper@1lE6w");
+		//LoginPage LoginPage= new LoginPage(driver);
+		HomePage HomePage=LoginPage.login("vishnudas@pixbitsolutions.com","Qapixbit@14");
 		HomePage.openPropertySpecalistPage();
 	}
 	
@@ -37,9 +41,9 @@ public class PropertySpecalistCreation extends GlobalData {
 	
 	@DataProvider
 	public Object[][] ps_creation_required_only_1() throws IOException {
-		List<HashMap<String, String>> value = getJsondata(
-				"/Users/vk14/eclipse-workspace/AgencyPortal/src/test/java/ps_creation_data/ps_creation_required_field.json");
-		return new Object[][] {{value.get(2)}};
+		List<HashMap<String, String>> value = getJsondata(System.getProperty("user.dir")+
+				"/src/test/java/com/pixbit/agencyportal/ps/data/ps_creation_required_field.json");
+		return new Object[][] {{value.get(0)},{value.get(1)},{value.get(2)},{value.get(3)}};
 	}
 	
 	

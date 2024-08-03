@@ -71,6 +71,7 @@ public class HomePage extends Components {
 			projectButton.click();
 			return new ProjectPage(driver);
 		} else {
+			Thread.sleep(2000);
 			developer.click();
 			projectButton.click();
 			return new ProjectPage(driver);

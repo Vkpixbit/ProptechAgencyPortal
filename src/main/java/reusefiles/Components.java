@@ -23,10 +23,10 @@ public class Components {
 	@FindBy(xpath = "//button[@type='submit']")
 	WebElement nextClick;
 	
-	@FindBy(xpath = "//button[text()='Save']")
+	@FindBy(xpath = "//div[text()='Save']")
 	public  WebElement save;
 	
-	@FindBy(xpath = "//button[text()='Done']")
+	@FindBy(xpath = "//div[text()='Done']")
 	WebElement done;
 	
 	@FindBy(xpath = "//button[text()='Save & Initiate Trakheesi']")
@@ -34,7 +34,6 @@ public class Components {
 	
 	@FindBy(xpath = "//button[text()='Save & Send Password']")
 	WebElement saveSendPassword;
-	
 	
 	
 

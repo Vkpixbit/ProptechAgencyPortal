@@ -12,11 +12,7 @@ import java.awt.AWTException;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
-
 import org.testng.annotations.DataProvider;
-
-import io.cucumber.java.hu.Ha.Has;
-import io.cucumber.java.it.Data;
 
 public class CreateProject extends GlobalData {
 
@@ -40,14 +36,16 @@ public class CreateProject extends GlobalData {
 
 	@DataProvider
 	public Object[][] projectCreateData_1() throws IOException {
-		List<HashMap<String, String>> value = getJsondata(
-				"/Users/vk14/eclipse-workspace/AgencyPortal/src/test/java/data/ProjectDetails_1.json");
+		List<HashMap<String, String>> value = getJsondata(System.getProperty("user.dir")+
+				"/src/test/java/com/pixbit/agencyportal/developer/project/data/ProjectDetails_1.json");
 		return new Object[][] { { value.get(0) } };
 	}
+	
+	
 
 	// Create project as "Ready" Unit with "No" Post handover
 	// No phase show we select post handover as "No"
-	@Test(dataProvider = "projectCreateData_2", enabled = false)
+	@Test(dataProvider = "projectCreateData_2", enabled = true)
 	public void singlePhaseReadyNoPosthandover_1(HashMap<String, String> input) throws InterruptedException {
 		HomePage HomePage = LoginPage.login(input.get("email_id"), input.get("password"));
 		ProjectPage ProjectPage = HomePage.openProjects();
@@ -65,14 +63,14 @@ public class CreateProject extends GlobalData {
 
 	@DataProvider
 	public Object[][] projectCreateData_2() throws IOException {
-		List<HashMap<String, String>> value = getJsondata(
-				"/Users/vk14/eclipse-workspace/AgencyPortal/src/test/java/data/ProjectDetails_1.json");
+		List<HashMap<String, String>> value = getJsondata(System.getProperty("user.dir")+
+				"/src/test/java/com/pixbit/agencyportal/developer/project/data/ProjectDetails_2.json");
 		return new Object[][] { { value.get(1) } };
 	}
 
 	// Create Project as "Under construction" Unit
 	// 1 Phase, 1 Payment Plan and 1 Payment shedule
-	@Test(dataProvider = "projectCreateData_3")
+	@Test(dataProvider = "projectCreateData_3",enabled = false)
 	public void singlePhaseUnderconstruction_1(HashMap<String, String> input) throws InterruptedException {
 		HomePage HomePage = LoginPage.login(input.get("email_id"), input.get("password"));
 		ProjectPage ProjectPage = HomePage.openProjects();
@@ -95,7 +93,7 @@ public class CreateProject extends GlobalData {
 	// Create Project as "Ready" unit
 	// 1 phase 2 payment plan first plan contain 3 shedules and second plan contain
 	// 2 shedules
-	@Test(dataProvider = "projectCreateData_4")
+	@Test(dataProvider = "projectCreateData_4",enabled = false)
 	public void singlePhaseReadyYesPosthandover_2(HashMap<String, String> input) throws InterruptedException {
 		HomePage HomePage = LoginPage.login(input.get("email_id"), input.get("password"));
 		ProjectPage ProjectPage = HomePage.openProjects();
@@ -124,7 +122,7 @@ public class CreateProject extends GlobalData {
 	// Create project with Under construction status
 	// 1 phase 2 payment plan first plan contain 2 shedules and second plan contains
 	// 3 shedules
-	@Test(dataProvider = "projectCreateData_5")
+	@Test(dataProvider = "projectCreateData_5",enabled = false)
 	public void singlePhaseUnderconstruction_2(HashMap<String, String> input) throws InterruptedException {
 		HomePage HomePage = LoginPage.login(input.get("email_id"), input.get("password"));
 		ProjectPage ProjectPage = HomePage.openProjects();
@@ -153,7 +151,7 @@ public class CreateProject extends GlobalData {
 	/*
 	 * Create Project with Ready unit status and Post Handover as "No"
 	 */
-	@Test(dataProvider = "project_create_with_ready_posthandover_no")
+	@Test(dataProvider = "project_create_with_ready_posthandover_no",enabled = true)
 	public void projectWithReadyAndPosthandoverNo(HashMap<String, String> input) throws InterruptedException {
 		HomePage HomePage = LoginPage.login(input.get("email_id"), input.get("password"));
 		ProjectPage ProjectPage = HomePage.openProjects();
@@ -167,7 +165,7 @@ public class CreateProject extends GlobalData {
 	@DataProvider
 	public Object[][] project_create_with_ready_posthandover_no() throws IOException {
 		List<HashMap<String, String>> value = getJsondata(
-				System.getProperty("user.dir") + "/src/test/java/data/ProjectDetails_1.json");
+				System.getProperty("user.dir") + "/src/test/java/com/pixbit/agencyportal/developer/project/data/ProjectDetails_1.json");
 		return new Object[][] { { value.get(1) } };
 	}
 
@@ -177,7 +175,7 @@ public class CreateProject extends GlobalData {
 	 * 2 payment plan first plan contain 2 shedules and second plan contains 2
 	 * shedule
 	 */
-	@Test(dataProvider = "projectCreateData_6")
+	@Test(dataProvider = "projectCreateData_6",enabled = true)
 	public void twoPhaseReadyAndUnderConstruction_1(HashMap<String, String> input) throws InterruptedException {
 		HomePage HomePage = LoginPage.login(input.get("email_id"), input.get("password"));
 		ProjectPage ProjectPage = HomePage.openProjects();
@@ -205,8 +203,8 @@ public class CreateProject extends GlobalData {
 
 	@DataProvider
 	public Object[][] projectCreateData_6() throws IOException {
-		List<HashMap<String, String>> value = getJsondata(
-				"/Users/vk14/eclipse-workspace/AgencyPortal/src/test/java/data/ProjectDetails_3.json");
+		List<HashMap<String, String>> value = getJsondata(System.getProperty("user.dir")+
+				"/src/test/java/com/pixbit/agencyportal/developer/project/data/ProjectDetails_3.json");
 		return new Object[][] { { value.get(0) } };
 	}
 

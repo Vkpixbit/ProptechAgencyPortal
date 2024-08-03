@@ -53,7 +53,7 @@ public class UserAdminCreatePage extends Components {
 		req_role.click();
 	}
 
-	public UserAdminPage createNewUserAdmin_Active(String name, String email, String country_code, String mobile,
+	public UserAdminPage createNewUserAdminActive(String name, String email, String country_code, String mobile,
 			String address, String user_role) throws InterruptedException {
 
 		nameField.sendKeys(name);

@@ -21,6 +21,8 @@
 
 
 	<dependencies>
+
+
 		<!--
 		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>
@@ -115,7 +117,8 @@
 							<version>3.2.5</version>
 							<configuration>
 								<suiteXmlFiles>
-									<suiteXmlFile>test-suite/PropertyCreation.xml</suiteXmlFile>
+									<suiteXmlFile>
+										test-suite/PropertyCreation.xml</suiteXmlFile>
 								</suiteXmlFiles>
 							</configuration>
 						</plugin>
@@ -137,6 +140,28 @@
 							<configuration>
 								<suiteXmlFiles>
 									<suiteXmlFile>test-suite/MarkAsSold.xml</suiteXmlFile>
+								</suiteXmlFiles>
+							</configuration>
+						</plugin>
+					</plugins>
+				</pluginManagement>
+			</build>
+		</profile>
+		
+		
+		<profile>
+			<id>Project_Creation</id>
+
+			<build>
+				<pluginManagement>
+					<plugins>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-surefire-plugin</artifactId>
+							<version>3.2.5</version>
+							<configuration>
+								<suiteXmlFiles>
+									<suiteXmlFile>test-suite/ProjectCreation.xml</suiteXmlFile>
 								</suiteXmlFiles>
 							</configuration>
 						</plugin>

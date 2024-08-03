@@ -1,4 +1,4 @@
-package propertyspecalist;
+package com.pixbit.agencyporta.test.ps;
 
 import org.testng.annotations.Test;
 
