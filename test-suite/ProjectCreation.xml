@@ -3,9 +3,9 @@
 <suite name="Suite">
 	<test thread-count="5" name="LoginTest">
 		<classes>
-			<class name="project.CreateProject">
+			<class name="project.test.TestCreateproject">
 				<methods>
-					<include name="singlePhaseReadyYesPosthandover_1"></include>
+					<include name="singlePhaseReadyYesPosthandover1"/>
 				</methods>
 			</class>
 		</classes>

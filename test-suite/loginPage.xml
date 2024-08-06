@@ -3,7 +3,7 @@
 <suite name="Suite">
 	<test thread-count="5" name="LoginTest">
 		<classes>
-			<class name="loginpage.VerifyLoging">
+			<class name="loginpage.LoginTest">
 				<methods>
 					<include name="login_with_valid_email_password"></include>
 				</methods>

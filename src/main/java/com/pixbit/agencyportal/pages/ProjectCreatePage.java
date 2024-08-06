@@ -1,12 +1,14 @@
 package com.pixbit.agencyportal.pages;
 
 import java.awt.AWTException;
+import java.util.ArrayList;
+import java.util.Random;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import reusefiles.Components;
+import com.pixbit.agencyportal.reusefiles.Components;
 
 public class ProjectCreatePage extends Components {
 
@@ -45,19 +47,23 @@ public class ProjectCreatePage extends Components {
 	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.0.project_payment_plan_name']")
 	WebElement firstPhasePlanNameField;
 
-	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.0.project_payment_schedules.0.payment_schedule_date']")
+	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.0.project_payment_schedules.0." +
+			"payment_schedule_date']")
 	WebElement dateField_1_1_1;
 
 	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.0.project_payment_plan_name']")
 	WebElement paymentNameField1;
 
-	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.0.project_payment_schedules.0.payment_schedule_particular']")
+	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.0.project_payment_schedules.0." +
+			"payment_schedule_particular']")
 	WebElement particularField_1_1_1;
 
-	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.0.project_payment_schedules.0.payment_schedule_period']")
+	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.0.project_payment_schedules.0." +
+			"payment_schedule_period']")
 	WebElement periodField_1_1_1;
 
-	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.0.project_payment_schedules.0.project_payment_amount']")
+	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.0.project_payment_schedules.0." +
+			"project_payment_amount']")
 	WebElement bookingAmountField_1_1_1;
 
 	@FindBy(xpath = "//div[.='Payment Plan 1']")
@@ -69,16 +75,20 @@ public class ProjectCreatePage extends Components {
 	@FindBy(xpath = "(//button[text()='Add Payment Schedule'])[1]")
 	WebElement addPaymentShedule1_1;
 
-	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.0.project_payment_schedules.1.payment_schedule_date']")
+	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.0.project_payment_schedules.1." +
+			"payment_schedule_date']")
 	WebElement dateField_1_1_2;
 
-	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.0.project_payment_schedules.1.payment_schedule_particular']")
+	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.0.project_payment_schedules.1." +
+			"payment_schedule_particular']")
 	WebElement particularField_1_1_2;
 
-	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.0.project_payment_schedules.1.payment_schedule_period']")
+	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.0.project_payment_schedules.1." +
+			"payment_schedule_period']")
 	WebElement periodField_1_1_2;
 
-	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.0.project_payment_schedules.1.project_payment_amount']")
+	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.0.project_payment_schedules.1." +
+			"project_payment_amount']")
 	WebElement bookingAmountField_1_1_2;
 
 	@FindBy(xpath = "(//button[text()='Add Payment Plan'])[1]")
@@ -87,43 +97,55 @@ public class ProjectCreatePage extends Components {
 	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.1.project_payment_plan_name']")
 	WebElement paymentNameField2;
 
-	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.1.project_payment_schedules.0.payment_schedule_date']")
+	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.1.project_payment_schedules.0." +
+			"payment_schedule_date']")
 	WebElement dateField3;
 
-	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.1.project_payment_schedules.0.payment_schedule_particular']")
+	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.1.project_payment_schedules.0." +
+			"payment_schedule_particular']")
 	WebElement particularField3;
 
-	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.1.project_payment_schedules.0.payment_schedule_period']")
+	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.1.project_payment_schedules.0." +
+			"payment_schedule_period']")
 	WebElement periodField3;
 
-	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.1.project_payment_schedules.0.project_payment_amount']")
+	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.1.project_payment_schedules.0." +
+			"project_payment_amount']")
 	WebElement bookingAmountField3;
 
 	@FindBy(xpath = "(//button[text()='Add Payment Schedule'])[2]")
 	WebElement addPaymentShedule2;
 
-	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.1.project_payment_schedules.1.payment_schedule_date']")
+	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.1.project_payment_schedules.1." +
+			"payment_schedule_date']")
 	WebElement dateField4;
 
-	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.1.project_payment_schedules.1.payment_schedule_particular']")
+	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.1.project_payment_schedules.1." +
+			"payment_schedule_particular']")
 	WebElement particularField4;
 
-	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.1.project_payment_schedules.1.payment_schedule_period']")
+	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.1.project_payment_schedules.1." +
+			"payment_schedule_period']")
 	WebElement periodField4;
 
-	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.1.project_payment_schedules.1.project_payment_amount']")
+	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.1.project_payment_schedules.1." +
+			"project_payment_amount']")
 	WebElement bookingAmountField4;
 
-	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.1.project_payment_schedules.2.payment_schedule_date']")
+	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.1.project_payment_schedules.2." +
+			"payment_schedule_date']")
 	WebElement dateField5;
 
-	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.1.project_payment_schedules.2.payment_schedule_particular']")
+	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.1.project_payment_schedules.2." +
+			"payment_schedule_particular']")
 	WebElement particularField5;
 
-	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.1.project_payment_schedules.2.payment_schedule_period']")
+	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.1.project_payment_schedules.2." +
+			"payment_schedule_period']")
 	WebElement periodField5;
 
-	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.1.project_payment_schedules.2.project_payment_amount']")
+	@FindBy(xpath = "//input[@name='developer_project_phases.0.project_payment_plans.1.project_payment_schedules.2." +
+			"project_payment_amount']")
 	WebElement bookingAmountField5;
 
 	@FindBy(xpath = "(//button[text()='Add Phase'])[1]")
@@ -141,31 +163,35 @@ public class ProjectCreatePage extends Components {
 	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.0.project_payment_plan_name']")
 	WebElement paymentNameField_2_1;
 
-	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.0.project_payment_schedules.0.payment_schedule_date']")
+	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.0.project_payment_schedules.0." +
+			"payment_schedule_date']")
 	WebElement dateField_2_1_1;
 
-	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.0.project_payment_schedules.0.payment_schedule_particular']")
+	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.0.project_payment_schedules.0." +
+			"payment_schedule_particular']")
 	WebElement particularField_2_1_1;
 
-	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.0.project_payment_schedules.0.payment_schedule_period']")
+	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.0.project_payment_schedules.0." +
+			"payment_schedule_period']")
 	WebElement periodField_2_1_1;
 
-	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.0.project_payment_schedules.0.project_payment_amount']")
+	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.0.project_payment_schedules.0." +
+			"project_payment_amount']")
 	WebElement bookingAmountField_2_1_1;
 
 	@FindBy(xpath = "(//button[text()='Add Payment Schedule'])[2]")
 	WebElement addPaymentShedule3;
 
-	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.0.project_payment_schedules.1.payment_schedule_date']")
-	WebElement dateField_2_2;
-
-	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.0.project_payment_schedules.1.payment_schedule_particular']")
+    @FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.0.project_payment_schedules.1." +
+			"payment_schedule_particular']")
 	WebElement particularField_1_1_2_2;
 
-	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.0.project_payment_schedules.1.payment_schedule_period']")
+	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.0.project_payment_schedules.1." +
+			"payment_schedule_period']")
 	WebElement periodField_1_1_2_2;
 
-	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.0.project_payment_schedules.1.project_payment_amount']")
+	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.0.project_payment_schedules.1." +
+			"project_payment_amount']")
 	WebElement bookingAmountField_1_1_2_2;
 
 	@FindBy(xpath = "(//button[text()='Add Payment Plan'])[2]")
@@ -174,31 +200,39 @@ public class ProjectCreatePage extends Components {
 	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.1.project_payment_plan_name']")
 	WebElement paymentNameField2_2;
 
-	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.1.project_payment_schedules.0.payment_schedule_date']")
+	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.1.project_payment_schedules.0." +
+			"payment_schedule_date']")
 	WebElement dateField_1_1_2_3;
 
-	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.1.project_payment_schedules.0.payment_schedule_particular']")
+	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.1.project_payment_schedules.0." +
+			"payment_schedule_particular']")
 	WebElement particularField_1_1_2_3;
 
-	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.1.project_payment_schedules.0.payment_schedule_period']")
+	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.1.project_payment_schedules.0." +
+			"payment_schedule_period']")
 	WebElement periodField_1_1_2_3;
 
-	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.1.project_payment_schedules.0.project_payment_amount']")
+	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.1.project_payment_schedules.0." +
+			"project_payment_amount']")
 	WebElement bookingAmountField_1_1_2_3;
 
-	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.1.project_payment_schedules.1.payment_schedule_date']")
+	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.1.project_payment_schedules.1." +
+			"payment_schedule_date']")
 	WebElement dateField_1_1_2_4;
 
-	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.1.project_payment_schedules.1.payment_schedule_particular']")
+	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.1.project_payment_schedules.1." +
+			"payment_schedule_particular']")
 	WebElement particularField_1_1_2_4;
 
-	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.1.project_payment_schedules.1.payment_schedule_period']")
+	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.1.project_payment_schedules.1." +
+			"payment_schedule_period']")
 	WebElement periodField_1_1_2_4;
 
-	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.1.project_payment_schedules.1.project_payment_amount']")
+	@FindBy(xpath = "//input[@name='developer_project_phases.1.project_payment_plans.1.project_payment_schedules.1." +
+			"project_payment_amount']")
 	WebElement bookingAmountField_1_1_2_4;
 
-	public void selectDeveloperAndStatus(String project_developer, String project_status) throws InterruptedException {
+	public void selectDeveloperAndSelectStatus(String project_developer, String project_status) throws InterruptedException {
 		developerDropdown.click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//div[text()='" + project_developer + "']")).click();
@@ -212,13 +246,71 @@ public class ProjectCreatePage extends Components {
 		projectNameField.sendKeys(project_name);
 		projectNumberField.sendKeys(project_number);
 		projectDescriptionField.sendKeys(project_description);
-		escrowNumberField.sendKeys(escrow_number);
+		if(!escrow_number.isEmpty()){
+			escrowNumberField.sendKeys(escrow_number);
+		}
 		Thread.sleep(2000);
 	}
 
+	public ArrayList<String> createBookingAmount(String scheduleCount){
+		ArrayList<Integer> partitions = new ArrayList<>();
+		Random random = new Random();
+
+		// Step 1: Generate random values
+		int sum = 0;
+		for (int i = 0; i < Integer.parseInt(scheduleCount); i++) {
+			int randomValue = random.nextInt(100) + 1; // Generate a random number between 1 and 100
+			partitions.add(randomValue);
+			sum += randomValue;
+		}
+
+		// Step 2: Normalize to make the sum equal to 100
+		ArrayList<String> percentagePartitions = new ArrayList<>();
+		for (int value : partitions) {
+			double percentage = (double) value / sum * 100;
+			percentagePartitions.add(String.format("%.2f%%", percentage));
+		}
+
+		// Step 3: Adjust the last partition to make the sum exactly 100%
+		double totalPercentage = 0;
+		for (int i = 0; i < percentagePartitions.size() - 1; i++) {
+			totalPercentage += Double.parseDouble(percentagePartitions.get(i).replace("%", ""));
+		}
+
+		double lastPercentage = 100 - totalPercentage;
+		percentagePartitions.set(Integer.parseInt(scheduleCount) - 1, String.format("%.2f%%", lastPercentage));
+
+		return percentagePartitions;
+	}
+
+	public void addPaymentSchedule(String scheduleCount,String particular1,String monthCount){
+		ArrayList<String> readyPeriods = new ArrayList<String>();
+		readyPeriods.add("Immediate");
+		readyPeriods.add("After Booking");
+
+		for(int i=0;i<Integer.parseInt(scheduleCount);i++){
+			driver.findElement(By.name("developer_project_phases.0.project_payment_plans.'"+i+"'." +
+					"project_payment_schedules.'"+i+"'.payment_schedule_particular"))
+					.sendKeys(particular1);
+			driver.findElement(By.id("(//div[text()='Choose Period'])['"+i+1+"']")).click();
+			driver.findElement(By.xpath("//div[text()='"+readyPeriods.get(0)+"']")).click();
+			readyPeriods.remove(0);
+			if(readyPeriods.get(0).equals("after booking")){
+				driver.findElement(By.name("developer_project_phases.'"+i+"'.project_payment_plans.0.'"+i+"'" +
+						"project_payment_schedules.0.payment_schedule_month")).sendKeys(monthCount);
+			}
+			driver.findElement(By.name("developer_project_phases.0.project_payment_plans.'"+i+"'." +
+					"project_payment_schedules.'"+i+"'.project_payment_amount"))
+					.sendKeys(createBookingAmount(scheduleCount).get(i));
+			if(i!=Integer.parseInt(scheduleCount)){
+				driver.findElement(By.xpath("//button[text()='Add Payment Schedule")).click();
+			}
+		}
+	}
+
 	// Ready Unit status and Yes Post Handover status
-	public void readyUnitYesPostHandover_1(String phase_name_1, String noc_document, String unit_status,
-			String post_handover_status, String payment_name, String date, String particular_value, String period,
+	public void readyUnitYesPostHandover_1(String phase_name_1, String noc_document,
+			String payment_name, String date, String particular_value, String period,
 			String booking_amount) throws InterruptedException, AWTException {
 		phaseNameField1.sendKeys(phase_name_1);
 		Thread.sleep(2000);
@@ -230,8 +322,8 @@ public class ProjectCreatePage extends Components {
 		driver.findElement(By.id("1.0")).click();
 		Thread.sleep(2000);
 		paymentNameField1.sendKeys(payment_name);
-		dateField_1_1_1.sendKeys(date);
 		particularField_1_1_1.sendKeys(particular_value);
+		driver.findElement(By.id("(//div[text()='Choose Period'])[1]")).click();
 		periodField_1_1_1.sendKeys(period);
 		bookingAmountField_1_1_1.sendKeys(booking_amount);
 		Thread.sleep(2000);
@@ -442,7 +534,7 @@ public class ProjectCreatePage extends Components {
 		scrollToElement(driver.findElement(By.xpath("(//button[text()='Add Payment Schedule'])[3]")));
 		waitForElementToBeClickable(driver.findElement(By.xpath("(//button[text()='Add Payment Schedule'])[3]")));
 		driver.findElement(By.xpath("(//button[text()='Add Payment Schedule'])[3]")).click();
-		dateField_2_2.sendKeys(date_2_2);
+		//dateField_2_2.sendKeys(date_2_2);
 		particularField_1_1_2_2.sendKeys(particular_value_2_2);
 		periodField_1_1_2_2.sendKeys(period_2_2);
 		bookingAmountField_1_1_2_2.sendKeys(booking_amount_2_2);

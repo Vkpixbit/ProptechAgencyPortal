@@ -5,8 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-
-import reusefiles.Components;
+import com.pixbit.agencyportal.reusefiles.Components;
 
 public class PropertyPageValidations extends Components {
 
@@ -20,7 +19,8 @@ public class PropertyPageValidations extends Components {
 	
 	@FindBy(xpath = "(//div[@class='text-danger'])[1]")
 	WebElement projectFieldError;
-	
+
+
 	public void verifyProjectError() throws InterruptedException {
 		visbilityOfElement(save);
 		Thread.sleep(3000);
@@ -28,6 +28,4 @@ public class PropertyPageValidations extends Components {
 		String actualProjectError=projectFieldError.getText();
 		Assert.assertEquals(actualProjectError,"Project is required");
 	}
-	
-	
 }

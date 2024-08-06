@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-import reusefiles.Components;
+import com.pixbit.agencyportal.reusefiles.Components;
 
 public class UserAdminPage extends Components {
 

@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import reusefiles.Components;
+import com.pixbit.agencyportal.reusefiles.Components;
 
 public class PropertyCreatePage extends Components {
 
@@ -40,7 +40,7 @@ public class PropertyCreatePage extends Components {
 	List<WebElement> listOfCheckbox;
 
 	@FindBy(xpath = "//div[@id='property_type_id']")
-	WebElement propertyTypeDropdwon;
+	WebElement propertyTypeDropdown;
 
 	@FindBy(xpath = "//input[@id='title']")
 	WebElement titleField;
@@ -112,7 +112,7 @@ public class PropertyCreatePage extends Components {
 	WebElement reraNumberField;
 
 	@FindBy(id = "buildUpArea")
-	public WebElement builtupArea;
+    public WebElement builtupArea;
 
 	@FindBy(id = "totalArea")
 	public WebElement totalArea;
@@ -238,8 +238,6 @@ public class PropertyCreatePage extends Components {
 					break;
 				}	
 			}
-		else {
-		}
 	}
 
 	/*
@@ -316,7 +314,7 @@ public class PropertyCreatePage extends Components {
 	 * Select Apartment
 	 */
 	public void apartment() throws InterruptedException {
-		propertyTypeDropdwon.click();
+		propertyTypeDropdown.click();
 		Thread.sleep(2000);
 		WebElement requiredPropertyType = driver.findElement(By.xpath("//div[text()='Apartment']"));
 		requiredPropertyType.click();
@@ -326,7 +324,7 @@ public class PropertyCreatePage extends Components {
 	 * Select Townhouse
 	 */
 	public void townhouse() throws InterruptedException {
-		propertyTypeDropdwon.click();
+		propertyTypeDropdown.click();
 		Thread.sleep(3000);
 		WebElement requiredPropertyType = driver.findElement(By.xpath("//div[text()='Townhouse']"));
 		requiredPropertyType.click();
@@ -336,7 +334,7 @@ public class PropertyCreatePage extends Components {
 	 * Select Villa
 	 */
 	public void villa() throws InterruptedException {
-		propertyTypeDropdwon.click();
+		propertyTypeDropdown.click();
 		Thread.sleep(3000);
 		WebElement requiredPropertyType = driver.findElement(By.xpath("//div[text()='Villa']"));
 		requiredPropertyType.click();
@@ -346,7 +344,7 @@ public class PropertyCreatePage extends Components {
 	 * Select Office
 	 */
 	public void office() throws InterruptedException {
-		propertyTypeDropdwon.click();
+		propertyTypeDropdown.click();
 		Thread.sleep(4000);
 		WebElement requiredPropertyType = driver.findElement(By.xpath("//div[text()='Office']"));
 		requiredPropertyType.click();
@@ -356,7 +354,7 @@ public class PropertyCreatePage extends Components {
 	 * Select service apartment
 	 */
 	public void serviceApartment() throws InterruptedException {
-		propertyTypeDropdwon.click();
+		propertyTypeDropdown.click();
 		Thread.sleep(3000);
 		WebElement requiredPropertyType = driver.findElement(By.xpath("//div[text()='Service Apartment']"));
 		requiredPropertyType.click();

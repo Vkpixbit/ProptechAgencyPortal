@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import reusefiles.Components;
+import com.pixbit.agencyportal.reusefiles.Components;
 
 public class HomePage extends Components {
 

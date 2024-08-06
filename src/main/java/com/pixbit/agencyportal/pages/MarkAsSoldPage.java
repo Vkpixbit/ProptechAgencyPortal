@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import reusefiles.Components;
+import com.pixbit.agencyportal.reusefiles.Components;
 
 public class MarkAsSoldPage extends Components {
 	

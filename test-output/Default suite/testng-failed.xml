@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="project.CreateProject">
+      <class name="project.createproject">
         <methods>
           <include name="close"/>
           <include name="openAgencyPortal"/>
           <include name="singlePhaseReadyNoPosthandover_1" invocation-numbers="0"/>
         </methods>
-      </class> <!-- project.CreateProject -->
+      </class> <!-- project.createproject -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
