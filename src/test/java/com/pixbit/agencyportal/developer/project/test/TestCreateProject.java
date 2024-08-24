@@ -20,7 +20,7 @@ public class TestCreateProject extends GlobalData {
      * Plan and 1 Payment schedule
      */
     @Test(dataProvider = "projectCreateData_1", enabled = true)
-    public void singlePhaseReadyYesPosthandover1(HashMap<String, String> input)
+    public void singlePhaseReadyYesPostHandover1(HashMap<String, String> input)
             throws InterruptedException, AWTException {
         HomePage HomePage = LoginPage.login(input.get("email_id"), input.get("password"));
         ProjectPage ProjectPage = HomePage.openProjects();
